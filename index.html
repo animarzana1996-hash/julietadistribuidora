@@ -50,7 +50,6 @@
         radial-gradient(circle at 50% 85%, rgba(57, 255, 20, 0.05) 0%, transparent 50%);
     }
 
-    /* Efectos Neón fieles al logo */
     .glow-yellow {
       color: #fff68f;
       text-shadow: 
@@ -91,7 +90,7 @@
     }
 
     .card-neon {
-      background: rgba(13, 20, 43, 0.82);
+      background: rgba(13, 20, 43, 0.85);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.08);
       transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
@@ -101,6 +100,19 @@
       border-color: rgba(0, 243, 255, 0.45);
       box-shadow: 0 10px 30px -10px rgba(0, 243, 255, 0.22);
       transform: translateY(-4px);
+    }
+
+    .card-featured {
+      background: linear-gradient(145deg, rgba(24, 14, 46, 0.92) 0%, rgba(11, 22, 48, 0.95) 100%);
+      border: 1px solid rgba(255, 71, 182, 0.45);
+      box-shadow: 0 0 28px -8px rgba(255, 71, 182, 0.35);
+      transition: all 0.28s ease;
+    }
+
+    .card-featured:hover {
+      border-color: #fff066;
+      box-shadow: 0 0 34px -6px rgba(255, 240, 102, 0.35);
+      transform: translateY(-3px);
     }
 
     .btn-whatsapp {
@@ -128,50 +140,45 @@
       transform: translateY(-1px);
     }
 
-    /* Scrollbar personalizada */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #070b19;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #1e293b;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #00f3ff;
-    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #070b19; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #00f3ff; }
   </style>
 </head>
 <body class="antialiased selection:bg-neonPink selection:text-white">
 
-  <!-- BARRA SUPERIOR ADMIN (Solo visible cuando el administrador inicia sesión) -->
+  <!-- BARRA SUPERIOR ADMIN (Visible al iniciar sesión) -->
   <div id="admin-banner" class="hidden sticky top-0 z-50 bg-gradient-to-r from-fuchsia-950/95 via-slate-900/95 to-cyan-950/95 backdrop-blur-md border-b border-neonPink/50 px-4 py-2.5 shadow-lg">
-    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-2.5">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2.5">
+      <div class="flex items-center gap-2">
         <span class="flex h-2.5 w-2.5 relative">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neonGreen opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-neonGreen"></span>
         </span>
-        <span class="text-xs sm:text-sm font-bold text-white tracking-wide">MODO ADMINISTRADOR ACTIVO</span>
-        <span id="admin-email-display" class="hidden md:inline text-xs text-cyan-300 bg-slate-950/60 px-2.5 py-0.5 rounded-full border border-cyan-500/30"></span>
+        <span class="text-xs sm:text-sm font-extrabold text-white tracking-wide">PANEL ADMIN</span>
+        <span id="admin-email-display" class="hidden lg:inline text-xs text-cyan-300 bg-slate-950/60 px-2.5 py-0.5 rounded-full border border-cyan-500/30"></span>
       </div>
-      <div class="flex items-center gap-2">
+
+      <div class="flex flex-wrap items-center gap-2">
+        <button onclick="openFeaturedModal()" class="inline-flex items-center gap-1.5 bg-neonPink text-white hover:brightness-110 font-extrabold text-xs sm:text-sm px-3.5 py-1.5 rounded-lg shadow-md transition cursor-pointer">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+          + Publicación Destacada
+        </button>
         <button onclick="openProductModal()" class="inline-flex items-center gap-1.5 bg-neonGreen text-slate-950 hover:brightness-110 font-extrabold text-xs sm:text-sm px-3.5 py-1.5 rounded-lg shadow-md transition cursor-pointer">
           <i data-lucide="plus-circle" class="w-4 h-4"></i>
-          Nuevo Producto
+          + Nuevo Producto
         </button>
-        <button onclick="logoutAdmin()" class="inline-flex items-center gap-1.5 bg-slate-800 hover:bg-rose-950 text-slate-200 hover:text-rose-200 border border-slate-700 hover:border-rose-500/50 text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-lg transition cursor-pointer">
+        <button onclick="logoutAdmin()" class="inline-flex items-center gap-1 bg-slate-800 hover:bg-rose-950 text-slate-200 hover:text-rose-200 border border-slate-700 text-xs font-semibold px-3 py-1.5 rounded-lg transition cursor-pointer">
           <i data-lucide="log-out" class="w-4 h-4"></i>
-          Salir
+          <span class="hidden sm:inline">Salir</span>
         </button>
       </div>
     </div>
   </div>
 
   <!-- NAVBAR -->
-  <header class="border-b border-white/10 bg-midnight/80 backdrop-blur-md sticky top-0 z-40" id="main-header">
+  <header class="border-b border-white/10 bg-midnight/85 backdrop-blur-md sticky top-0 z-40" id="main-header">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       <a href="#" class="flex items-center gap-2.5 group">
         <div class="w-9 h-9 rounded-full logo-ring flex items-center justify-center font-display font-black text-xs text-neonYellow">
@@ -184,15 +191,24 @@
       </a>
 
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="#destacados" class="hover:text-neonYellow transition flex items-center gap-1">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-neonPink"></i> Destacados
+        </a>
         <a href="#catalogo" class="hover:text-neonCyan transition">Catálogo</a>
         <a href="#canales" class="hover:text-neonPink transition">Canales y Redes</a>
-        <a href="#como-comprar" class="hover:text-neonGreen transition">¿Cómo pedir?</a>
       </nav>
 
-      <div class="flex items-center gap-2.5">
+      <div class="flex items-center gap-2">
+        <!-- Acceso directo al Panel Admin -->
+        <button onclick="openLoginModal()" id="nav-admin-btn" class="px-3 py-2 rounded-full bg-slate-900 border border-white/15 hover:border-neonCyan text-slate-300 hover:text-neonCyan text-xs font-bold inline-flex items-center gap-1.5 transition cursor-pointer" title="Ingresar como Administrador">
+          <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+          <span>Admin</span>
+        </button>
+
         <a href="https://www.tiktok.com/@alu4082?lang=es" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full bg-slate-900 border border-cyan-500/40 text-cyan-300 hover:text-white hover:border-neonPink transition" title="Ver TikTok @alu4082">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
         </a>
+
         <a href="https://wa.me/5492617040339?text=Hola%20Julieta!%20Vi%20tu%20p%C3%A1gina%20web%20y%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" class="btn-whatsapp text-slate-950 font-bold text-xs sm:text-sm px-3.5 py-2 rounded-full inline-flex items-center gap-1.5">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
           <span class="hidden sm:inline">2617 04-0339</span>
@@ -203,28 +219,24 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section class="relative pt-10 pb-14 md:pt-16 md:pb-20 px-4 overflow-hidden">
+  <section class="relative pt-10 pb-12 md:pt-14 md:pb-16 px-4 overflow-hidden">
     <div class="max-w-5xl mx-auto flex flex-col items-center text-center">
       
-      <!-- Emblema Circular Neón inspirado en el Logo -->
-      <div class="relative mb-8">
-        <div class="w-60 h-60 sm:w-72 sm:h-72 rounded-full logo-ring flex flex-col items-center justify-center p-5 relative overflow-hidden">
-          <!-- Arco texto superior -->
+      <!-- Emblema Circular Neón -->
+      <div class="relative mb-7">
+        <div class="w-56 h-56 sm:w-68 sm:h-68 rounded-full logo-ring flex flex-col items-center justify-center p-5 relative overflow-hidden">
           <span class="text-[10px] sm:text-xs font-display font-bold tracking-[0.22em] uppercase glow-cyan mb-1">
             ELECTRÓNICA • HOGAR • MÁS
           </span>
           
-          <!-- JULIETA! -->
           <h1 class="font-display font-black text-4xl sm:text-5xl tracking-wider glow-yellow leading-none my-1">
             JULIETA!
           </h1>
           
-          <!-- Venta a Domicilio -->
           <p class="font-script text-3xl sm:text-4xl glow-pink -rotate-3 leading-tight my-1">
             Venta a<br>Domicilio
           </p>
           
-          <!-- Teléfono en verde neón -->
           <div class="mt-2 pt-1.5 border-t border-white/10">
             <span class="font-display font-extrabold text-sm sm:text-base tracking-wider glow-green">
               2617 04-0339
@@ -233,46 +245,80 @@
         </div>
       </div>
 
-      <p class="max-w-2xl text-slate-300 text-base sm:text-lg leading-relaxed mb-8">
-        Todo lo que buscás en <strong class="text-white">electrónica, bazar, artículos para el hogar, accesorios y novedades</strong> en un solo lugar. Mirá el catálogo actualizado, sumate a nuestros canales de difusión y pedí directo a tu domicilio.
+      <p class="max-w-2xl text-slate-300 text-base sm:text-lg leading-relaxed mb-7">
+        Todo lo que buscás en <strong class="text-white">electrónica, bazar, artículos para el hogar, accesorios y novedades</strong> en un solo lugar. Mirá nuestras publicaciones destacadas, explorá el catálogo y pedí directo a tu domicilio.
       </p>
 
-      <!-- Botones Principales de Acción -->
-      <div class="flex flex-wrap items-center justify-center gap-3.5 w-full sm:w-auto">
+      <!-- Botones Principales -->
+      <div class="flex flex-wrap items-center justify-center gap-3 w-full sm:w-auto">
         <a href="#catalogo" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-neonCyan text-slate-950 font-display font-extrabold text-sm uppercase tracking-wider hover:brightness-110 shadow-[0_0_20px_rgba(0,243,255,0.4)] transition inline-flex items-center justify-center gap-2">
           <i data-lucide="shopping-bag" class="w-4 h-4"></i>
           Ver Catálogo
         </a>
         <a href="https://wa.me/5492617040339?text=Hola%20Julieta!%20Quiero%20que%20me%20agregues%20al%20canal%20/%20lista%20de%20difusi%C3%B3n%20para%20ver%20las%20novedades." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-3.5 rounded-xl btn-whatsapp text-slate-950 font-display font-extrabold text-sm uppercase tracking-wider inline-flex items-center justify-center gap-2">
           <i data-lucide="bell-ring" class="w-4 h-4"></i>
-          Sumarme a Difusión WhatsApp
+          Sumarme a Difusión
         </a>
         <a href="https://www.tiktok.com/@alu4082?lang=es" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-3.5 rounded-xl btn-tiktok text-white font-display font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center gap-2">
           <svg class="w-4 h-4 fill-current text-neonPink" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
-          Ver Videos en TikTok
+          Videos en TikTok
         </a>
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN CATÁLOGO -->
+  <!-- SECCIÓN PUBLICACIONES DESTACADAS -->
+  <section id="destacados" class="py-10 px-4 border-t border-white/10 bg-gradient-to-b from-fuchsia-950/15 to-transparent">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-neonPink/15 border border-neonPink/40 flex items-center justify-center text-neonPink">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="text-[11px] font-display font-bold tracking-widest uppercase text-neonPink block">Novedades y Promos</span>
+            <h2 class="font-display font-black text-xl sm:text-2xl text-white">Publicaciones Destacadas</h2>
+          </div>
+        </div>
+
+        <button onclick="openFeaturedModal()" id="quick-add-featured-btn" class="hidden inline-flex items-center gap-1.5 bg-neonPink/20 hover:bg-neonPink text-neonPink hover:text-white border border-neonPink/50 font-bold text-xs px-3.5 py-2 rounded-xl transition cursor-pointer">
+          <i data-lucide="plus" class="w-4 h-4"></i>
+          Nueva Publicación Destacada
+        </button>
+      </div>
+
+      <!-- Grilla de Publicaciones Destacadas -->
+      <div id="featured-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Renderizado dinámico por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CATÁLOGO GENERAL -->
   <section id="catalogo" class="py-12 px-4 border-t border-white/10">
     <div class="max-w-6xl mx-auto">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
         <div>
-          <span class="text-xs font-display font-bold tracking-widest uppercase text-neonCyan">Productos Disponibles</span>
-          <h2 class="font-display font-black text-2xl sm:text-3xl text-white mt-1">Catálogo de Novedades</h2>
+          <span class="text-xs font-display font-bold tracking-widest uppercase text-neonCyan">Todos los Artículos</span>
+          <h2 class="font-display font-black text-2xl sm:text-3xl text-white mt-1">Catálogo Completo</h2>
         </div>
 
-        <!-- Buscador -->
-        <div class="relative w-full md:w-80">
-          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
-          <input 
-            type="text" 
-            id="search-input" 
-            placeholder="Buscar parlante, termo, luz led..." 
-            class="w-full bg-slate-900/90 border border-white/15 focus:border-neonCyan rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-slate-400 outline-none transition"
-          />
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <button onclick="openProductModal()" id="quick-add-product-btn" class="hidden inline-flex items-center justify-center gap-1.5 bg-neonGreen text-slate-950 hover:brightness-110 font-extrabold text-xs px-4 py-2.5 rounded-xl transition cursor-pointer">
+            <i data-lucide="plus-circle" class="w-4 h-4"></i>
+            Cargar Producto
+          </button>
+
+          <!-- Buscador -->
+          <div class="relative w-full md:w-72">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+            <input 
+              type="text" 
+              id="search-input" 
+              placeholder="Buscar parlante, termo, led..." 
+              class="w-full bg-slate-900/90 border border-white/15 focus:border-neonCyan rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-slate-400 outline-none transition"
+            />
+          </div>
         </div>
       </div>
 
@@ -367,29 +413,6 @@
     </div>
   </section>
 
-  <!-- CÓMO COMPRAR -->
-  <section id="como-comprar" class="py-12 px-4 border-t border-white/10">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-        <div class="p-5 rounded-2xl bg-slate-900/40 border border-white/5">
-          <div class="w-10 h-10 rounded-full bg-cyan-500/15 text-neonCyan font-display font-black flex items-center justify-center mx-auto mb-3">1</div>
-          <h4 class="font-bold text-white mb-1">Elegí lo que te guste</h4>
-          <p class="text-xs sm:text-sm text-slate-400">Explorá el catálogo o mirá los videos en TikTok para ver cada detalle.</p>
-        </div>
-        <div class="p-5 rounded-2xl bg-slate-900/40 border border-white/5">
-          <div class="w-10 h-10 rounded-full bg-fuchsia-500/15 text-neonPink font-display font-black flex items-center justify-center mx-auto mb-3">2</div>
-          <h4 class="font-bold text-white mb-1">Consultá stock por WhatsApp</h4>
-          <p class="text-xs sm:text-sm text-slate-400">Tocá el botón "Consultar" del producto y te respondemos al instante al 2617 04-0339.</p>
-        </div>
-        <div class="p-5 rounded-2xl bg-slate-900/40 border border-white/5">
-          <div class="w-10 h-10 rounded-full bg-emerald-500/15 text-neonGreen font-display font-black flex items-center justify-center mx-auto mb-3">3</div>
-          <h4 class="font-bold text-white mb-1">Recibilo a Domicilio</h4>
-          <p class="text-xs sm:text-sm text-slate-400">Coordinamos día, horario y zona de entrega de forma rápida y segura.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
   <footer class="border-t border-white/10 py-10 px-4 bg-midnight">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
@@ -406,8 +429,8 @@
         <a href="https://www.tiktok.com/@alu4082?lang=es" target="_blank" rel="noopener noreferrer" class="hover:text-neonPink transition flex items-center gap-1">
           TikTok @alu4082
         </a>
-        <button onclick="openLoginModal()" class="text-slate-500 hover:text-neonCyan transition inline-flex items-center gap-1 cursor-pointer" title="Acceso Administración">
-          <i data-lucide="lock" class="w-3.5 h-3.5"></i> Admin
+        <button onclick="openLoginModal()" class="text-slate-400 hover:text-neonCyan transition inline-flex items-center gap-1 cursor-pointer font-semibold">
+          <i data-lucide="lock" class="w-3.5 h-3.5"></i> Panel Admin
         </button>
       </div>
     </div>
@@ -432,7 +455,7 @@
         </div>
         <div>
           <h3 class="font-display font-extrabold text-lg text-white">Acceso Administrador</h3>
-          <p class="text-xs text-slate-400">Ingresá para agregar, editar o pausar productos</p>
+          <p class="text-xs text-slate-400">Cargá productos nuevos y publicaciones destacadas</p>
         </div>
       </div>
 
@@ -455,7 +478,7 @@
     </div>
   </div>
 
-  <!-- MODAL AGREGAR / EDITAR PRODUCTO -->
+  <!-- MODAL AGREGAR / EDITAR PRODUCTO O PUBLICACIÓN DESTACADA -->
   <div id="product-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-midnightCard border border-neonPink/40 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative my-8">
       <button onclick="closeProductModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white cursor-pointer">
@@ -463,14 +486,24 @@
       </button>
 
       <h3 id="product-modal-title" class="font-display font-extrabold text-xl text-white mb-1">Nuevo Producto</h3>
-      <p class="text-xs text-slate-400 mb-5">Completá los datos del artículo para publicarlo en el catálogo.</p>
+      <p id="product-modal-subtitle" class="text-xs text-slate-400 mb-5">Completá los datos para publicarlo en la página.</p>
 
       <form id="product-form" class="space-y-4">
         <input type="hidden" id="prod-id" />
 
+        <!-- Selector rápido de tipo de publicación -->
+        <div class="grid grid-cols-2 gap-2 p-1 rounded-xl bg-slate-950 border border-white/10">
+          <button type="button" id="mode-regular-btn" onclick="setModalType(false)" class="py-2 rounded-lg text-xs font-bold transition cursor-pointer bg-slate-800 text-white">
+            Producto de Catálogo
+          </button>
+          <button type="button" id="mode-featured-btn" onclick="setModalType(true)" class="py-2 rounded-lg text-xs font-bold transition cursor-pointer text-slate-400 hover:text-white flex items-center justify-center gap-1">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-neonPink"></i> Publicación Destacada
+          </button>
+        </div>
+
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Nombre del producto *</label>
-          <input type="text" id="prod-name" required placeholder="Ej: Parlante Bluetooth RGB Portátil" class="w-full bg-slate-950 border border-white/15 focus:border-neonPink rounded-xl px-3.5 py-2.5 text-sm text-white outline-none" />
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Título o nombre del producto *</label>
+          <input type="text" id="prod-name" required placeholder="Ej: Combo Parlante + Tira LED / Llegó mercadería nueva" class="w-full bg-slate-950 border border-white/15 focus:border-neonPink rounded-xl px-3.5 py-2.5 text-sm text-white outline-none" />
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -484,41 +517,47 @@
             </select>
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Precio (Opcional)</label>
-            <input type="text" id="prod-price" placeholder="Ej: $18.500 o Consultar" class="w-full bg-slate-950 border border-white/15 focus:border-neonPink rounded-xl px-3.5 py-2.5 text-sm text-white outline-none" />
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Precio o Etiqueta (Opcional)</label>
+            <input type="text" id="prod-price" placeholder="Ej: $18.500 o Promo Hoy" class="w-full bg-slate-950 border border-white/15 focus:border-neonPink rounded-xl px-3.5 py-2.5 text-sm text-white outline-none" />
           </div>
         </div>
 
+        <div id="badge-field-box">
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Etiqueta de destaque</label>
+          <select id="prod-badge" class="w-full bg-slate-950 border border-white/15 focus:border-neonPink rounded-xl px-3.5 py-2 text-xs text-white outline-none">
+            <option value="DESTACADO">✨ DESTACADO</option>
+            <option value="NUEVO INGRESO">🔥 NUEVO INGRESO</option>
+            <option value="PROMO SEMANAL">⚡ PROMO SEMANAL</option>
+            <option value="ÚLTIMAS UNIDADES">⏳ ÚLTIMAS UNIDADES</option>
+          </select>
+        </div>
+
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Descripción breve *</label>
-          <textarea id="prod-desc" rows="2" required placeholder="Características principales, medidas, colores disponibles..." class="w-full bg-slate-950 border border-white/15 focus:border-neonPink rounded-xl px-3.5 py-2 text-sm text-white outline-none"></textarea>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Descripción *</label>
+          <textarea id="prod-desc" rows="2" required placeholder="Detalles del producto, colores, medidas o condiciones de la promo..." class="w-full bg-slate-950 border border-white/15 focus:border-neonPink rounded-xl px-3.5 py-2 text-sm text-white outline-none"></textarea>
         </div>
 
         <!-- Imagen: Subir archivo o URL -->
         <div class="p-3.5 rounded-xl bg-slate-950/80 border border-white/10 space-y-3">
-          <label class="block text-xs font-semibold text-slate-300">Foto del producto</label>
+          <label class="block text-xs font-semibold text-slate-300">Foto del producto o flyer</label>
           
-          <div class="flex flex-col sm:flex-row gap-2">
-            <label class="flex-1 cursor-pointer bg-slate-900 hover:bg-slate-800 border border-dashed border-cyan-500/50 rounded-xl p-2.5 text-center text-xs text-cyan-300 font-semibold transition flex items-center justify-center gap-1.5">
-              <i data-lucide="image-plus" class="w-4 h-4"></i>
-              <span>Subir desde celular / PC</span>
-              <input type="file" id="prod-file" accept="image/*" class="hidden" onchange="handleImageUpload(event)" />
-            </label>
-          </div>
+          <label class="cursor-pointer bg-slate-900 hover:bg-slate-800 border border-dashed border-cyan-500/50 rounded-xl p-2.5 text-center text-xs text-cyan-300 font-semibold transition flex items-center justify-center gap-1.5">
+            <i data-lucide="image-plus" class="w-4 h-4"></i>
+            <span>Elegir foto desde celular o PC</span>
+            <input type="file" id="prod-file" accept="image/*" class="hidden" onchange="handleImageUpload(event)" />
+          </label>
 
-          <div>
-            <input type="text" id="prod-image" placeholder="O pegá aquí el enlace (URL) de la imagen..." class="w-full bg-slate-900 border border-white/10 focus:border-neonCyan rounded-lg px-3 py-2 text-xs text-white outline-none" oninput="updateImagePreview(this.value)" />
-          </div>
+          <input type="text" id="prod-image" placeholder="O pegá el enlace (URL) de la imagen..." class="w-full bg-slate-900 border border-white/10 focus:border-neonCyan rounded-lg px-3 py-2 text-xs text-white outline-none" oninput="updateImagePreview(this.value)" />
 
           <div id="image-preview-box" class="hidden relative w-full h-36 rounded-lg overflow-hidden border border-white/10 bg-slate-900">
             <img id="image-preview" src="" alt="Vista previa" class="w-full h-full object-cover" />
           </div>
         </div>
 
-        <div class="flex items-center justify-between pt-1">
+        <div class="flex flex-wrap items-center justify-between gap-2 pt-1">
           <label class="inline-flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" id="prod-featured" class="rounded border-slate-700 bg-slate-950 text-neonPink focus:ring-0" />
-            <span class="text-xs font-semibold text-slate-300">Destacar como "Nuevo Ingreso"</span>
+            <input type="checkbox" id="prod-featured" class="rounded border-slate-700 bg-slate-950 text-neonPink focus:ring-0" onchange="syncFeaturedToggle()" />
+            <span class="text-xs font-semibold text-neonPink">Mostrar en Publicaciones Destacadas</span>
           </label>
 
           <label class="inline-flex items-center gap-2 cursor-pointer">
@@ -532,7 +571,7 @@
             Cancelar
           </button>
           <button type="submit" id="save-product-btn" class="px-5 py-2.5 rounded-xl bg-neonGreen text-slate-950 font-display font-extrabold text-xs uppercase tracking-wider hover:brightness-110 transition cursor-pointer">
-            Guardar Producto
+            Publicar Ahora
           </button>
         </div>
       </form>
@@ -564,7 +603,7 @@
     } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
     // =========================================================================
-    // CONFIGURACIÓN DE FIREBASE (Reemplazar con tus claves al subir a GitHub)
+    // CONFIGURACIÓN DE FIREBASE (Pegá tus credenciales acá para publicar)
     // =========================================================================
     const defaultFirebaseConfig = {
       apiKey: "TU_API_KEY",
@@ -581,13 +620,13 @@
 
     const appId = typeof __app_id !== 'undefined' ? __app_id : 'julieta-venta-domicilio';
 
-    // Productos de ejemplo iniciales (se muestran si aún no hay productos cargados en Firestore)
     const SAMPLE_PRODUCTS = [
       {
         id: 'sample-1',
         name: 'Parlante Portátil Bluetooth RGB',
         category: 'Electrónica',
         price: '$24.500',
+        badge: 'NUEVO INGRESO',
         description: 'Sonido potente con luces LED rítmicas, entrada USB, tarjeta SD, radio FM y batería recargable.',
         image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=800&q=80',
         featured: true,
@@ -599,8 +638,21 @@
         name: 'Tira LED Neón Flexible 5 Metros',
         category: 'Iluminación',
         price: '$16.900',
+        badge: 'PROMO SEMANAL',
         description: 'Ideal para decorar habitaciones, escritorios o locales. Incluye fuente de alimentación y control.',
         image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80',
+        featured: true,
+        active: true,
+        isSample: true
+      },
+      {
+        id: 'sample-5',
+        name: 'Mini Picadora Eléctrica Recargable USB',
+        category: 'Hogar y Bazar',
+        price: '$13.500',
+        badge: 'DESTACADO',
+        description: 'Cuchillas de acero inoxidable, ideal para ajo, cebolla, verduras y frutos secos en segundos.',
+        image: 'https://images.unsplash.com/photo-1585515320310-259814833e62?auto=format&fit=crop&w=800&q=80',
         featured: true,
         active: true,
         isSample: true
@@ -628,17 +680,6 @@
         isSample: true
       },
       {
-        id: 'sample-5',
-        name: 'Mini Picadora Eléctrica Recargable USB',
-        category: 'Hogar y Bazar',
-        price: '$13.500',
-        description: 'Cuchillas de acero inoxidable, ideal para ajo, cebolla, verduras y frutos secos en segundos.',
-        image: 'https://images.unsplash.com/photo-1585515320310-259814833e62?auto=format&fit=crop&w=800&q=80',
-        featured: true,
-        active: true,
-        isSample: true
-      },
-      {
         id: 'sample-6',
         name: 'Soporte Magnético Reforzado para Celular',
         category: 'Accesorios y Varios',
@@ -659,7 +700,6 @@
     let searchQuery = '';
     let firebaseReady = false;
 
-    // Inicializar Firebase
     try {
       if (firebaseConfig && firebaseConfig.apiKey && firebaseConfig.apiKey !== "TU_API_KEY") {
         const app = initializeApp(firebaseConfig);
@@ -671,26 +711,31 @@
           if (user && !user.isAnonymous) {
             isAdmin = true;
             document.getElementById('admin-banner').classList.remove('hidden');
+            document.getElementById('quick-add-featured-btn').classList.remove('hidden');
+            document.getElementById('quick-add-product-btn').classList.remove('hidden');
+            document.getElementById('nav-admin-btn').classList.add('hidden');
             document.getElementById('main-header').classList.remove('top-0');
             document.getElementById('main-header').classList.add('top-[46px]');
             document.getElementById('admin-email-display').textContent = user.email;
           } else {
             isAdmin = false;
             document.getElementById('admin-banner').classList.add('hidden');
+            document.getElementById('quick-add-featured-btn').classList.add('hidden');
+            document.getElementById('quick-add-product-btn').classList.add('hidden');
+            document.getElementById('nav-admin-btn').classList.remove('hidden');
             document.getElementById('main-header').classList.add('top-0');
             document.getElementById('main-header').classList.remove('top-[46px]');
             if (!user) {
               try {
                 await signInAnonymously(auth);
               } catch (e) {
-                console.warn("Auth anónimo no habilitado:", e.message);
+                console.warn("Auth anónimo:", e.message);
               }
             }
           }
-          renderProducts();
+          renderAll();
         });
 
-        // Escuchar colección pública de productos
         const productsCol = collection(db, 'artifacts', appId, 'public', 'data', 'products');
         onSnapshot(productsCol, (snapshot) => {
           const firestoreProducts = [];
@@ -699,29 +744,113 @@
           });
 
           if (firestoreProducts.length > 0) {
-            // Ordenar por fecha de creación más reciente
             firestoreProducts.sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0));
             allProducts = firestoreProducts;
           } else {
             allProducts = [...SAMPLE_PRODUCTS];
           }
-          renderProducts();
+          renderAll();
         }, (err) => {
-          console.warn("Usando catálogo local de respaldo:", err.message);
-          renderProducts();
+          console.warn("Catálogo local:", err.message);
+          renderAll();
         });
       }
     } catch (error) {
-      console.warn("Modo local sin Firebase:", error);
+      console.warn("Modo local:", error);
     }
 
-    // Renderizado de productos
+    function renderAll() {
+      renderFeatured();
+      renderProducts();
+      lucide.createIcons();
+    }
+
+    function renderFeatured() {
+      const featuredSection = document.getElementById('destacados');
+      const featuredGrid = document.getElementById('featured-grid');
+      const featuredItems = allProducts.filter(p => p.featured && (isAdmin || p.active !== false));
+
+      if (featuredItems.length === 0 && !isAdmin) {
+        featuredSection.classList.add('hidden');
+        return;
+      }
+
+      featuredSection.classList.remove('hidden');
+
+      if (featuredItems.length === 0 && isAdmin) {
+        featuredGrid.innerHTML = `
+          <div class="col-span-full text-center py-8 px-4 rounded-2xl border border-dashed border-neonPink/40 bg-slate-950/40">
+            <p class="text-sm text-slate-300">Todavía no tenés publicaciones destacadas activas.</p>
+            <button onclick="openFeaturedModal()" class="mt-3 px-4 py-2 rounded-xl bg-neonPink text-white text-xs font-extrabold cursor-pointer">
+              + Crear primera publicación destacada
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      featuredGrid.innerHTML = featuredItems.map(prod => {
+        const isPaused = prod.active === false;
+        const waText = encodeURIComponent(`Hola Julieta! Vi la publicación destacada *${prod.name}*${prod.price ? ` (${prod.price})` : ''} en tu web. ¿Me das más info?`);
+        const imgUrl = prod.image || 'https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=800&q=80';
+        const badgeText = prod.badge || 'DESTACADO';
+
+        return `
+          <article class="card-featured rounded-2xl overflow-hidden flex flex-col justify-between relative ${isPaused ? 'opacity-60' : ''}">
+            <div>
+              <div class="relative h-52 bg-slate-950 overflow-hidden group">
+                <img src="${imgUrl}" alt="${escapeHtml(prod.name)}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+                
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-extrabold bg-neonPink text-white shadow-md">
+                    ${escapeHtml(badgeText)}
+                  </span>
+                  ${isPaused ? `<span class="px-2.5 py-1 rounded-md text-[11px] font-extrabold bg-amber-500 text-slate-950">PAUSADO</span>` : ''}
+                </div>
+
+                ${isAdmin && !prod.isSample ? `
+                  <div class="absolute top-3 right-3 flex items-center gap-1.5 bg-midnight/90 backdrop-blur-md p-1.5 rounded-xl border border-white/15">
+                    <button onclick="editProduct('${prod.id}')" class="p-1.5 rounded-lg hover:bg-cyan-500/20 text-neonCyan transition cursor-pointer" title="Editar">
+                      <i data-lucide="pencil" class="w-4 h-4"></i>
+                    </button>
+                    <button onclick="toggleFeatured('${prod.id}', false)" class="p-1.5 rounded-lg hover:bg-fuchsia-500/20 text-neonPink transition cursor-pointer" title="Quitar de destacados">
+                      <i data-lucide="star-off" class="w-4 h-4"></i>
+                    </button>
+                    <button onclick="deleteProduct('${prod.id}')" class="p-1.5 rounded-lg hover:bg-rose-500/20 text-rose-400 transition cursor-pointer" title="Eliminar">
+                      <i data-lucide="trash-2" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                ` : ''}
+              </div>
+
+              <div class="p-5">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-neonCyan">${escapeHtml(prod.category || 'Novedad')}</span>
+                <h3 class="font-display font-extrabold text-lg text-white leading-snug mt-0.5 mb-2">${escapeHtml(prod.name)}</h3>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-3">${escapeHtml(prod.description || '')}</p>
+              </div>
+            </div>
+
+            <div class="px-5 pb-5 pt-2 flex items-center justify-between gap-3 border-t border-white/10">
+              <div>
+                <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Precio / Promo</span>
+                <span class="font-display font-extrabold text-base sm:text-lg glow-yellow">${escapeHtml(prod.price || 'Consultar')}</span>
+              </div>
+
+              <a href="https://wa.me/5492617040339?text=${waText}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp text-slate-950 font-display font-extrabold text-xs px-4 py-2.5 rounded-xl inline-flex items-center gap-1.5">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                Pedir Ahora
+              </a>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
     function renderProducts() {
       const grid = document.getElementById('products-grid');
       const emptyState = document.getElementById('empty-state');
 
       const filtered = allProducts.filter(p => {
-        // Si no es admin, ocultar los pausados
         if (!isAdmin && p.active === false) return false;
         const matchCat = currentCategory === 'Todos' || p.category === currentCategory;
         const q = searchQuery.toLowerCase().trim();
@@ -735,7 +864,6 @@
       if (filtered.length === 0) {
         grid.innerHTML = '';
         emptyState.classList.remove('hidden');
-        lucide.createIcons();
         return;
       }
 
@@ -751,20 +879,21 @@
               <div class="relative h-52 bg-slate-950 overflow-hidden group">
                 <img src="${imgUrl}" alt="${escapeHtml(prod.name)}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
                 
-                <!-- Etiquetas superiores -->
                 <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
                   <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-midnight/85 backdrop-blur-md text-neonCyan border border-cyan-500/30">
                     ${escapeHtml(prod.category || 'Varios')}
                   </span>
-                  ${prod.featured ? `<span class="px-2.5 py-1 rounded-md text-[11px] font-extrabold bg-neonPink text-white shadow">NUEVO</span>` : ''}
+                  ${prod.featured ? `<span class="px-2.5 py-1 rounded-md text-[11px] font-extrabold bg-neonPink text-white shadow">DESTACADO</span>` : ''}
                   ${isPaused ? `<span class="px-2.5 py-1 rounded-md text-[11px] font-extrabold bg-amber-500 text-slate-950">PAUSADO</span>` : ''}
                 </div>
 
-                <!-- Controles rápidos de Administrador -->
                 ${isAdmin && !prod.isSample ? `
-                  <div class="absolute top-3 right-3 flex items-center gap-1.5 bg-midnight/90 backdrop-blur-md p-1.5 rounded-xl border border-white/15">
-                    <button onclick="editProduct('${prod.id}')" class="p-1.5 rounded-lg hover:bg-cyan-500/20 text-neonCyan transition cursor-pointer" title="Editar producto">
+                  <div class="absolute top-3 right-3 flex items-center gap-1 bg-midnight/90 backdrop-blur-md p-1.5 rounded-xl border border-white/15">
+                    <button onclick="editProduct('${prod.id}')" class="p-1.5 rounded-lg hover:bg-cyan-500/20 text-neonCyan transition cursor-pointer" title="Editar">
                       <i data-lucide="pencil" class="w-4 h-4"></i>
+                    </button>
+                    <button onclick="toggleFeatured('${prod.id}', ${!prod.featured})" class="p-1.5 rounded-lg hover:bg-fuchsia-500/20 ${prod.featured ? 'text-neonPink' : 'text-slate-400'} transition cursor-pointer" title="${prod.featured ? 'Quitar destaque' : 'Destacar'}">
+                      <i data-lucide="sparkles" class="w-4 h-4"></i>
                     </button>
                     <button onclick="toggleProductActive('${prod.id}', ${!isPaused})" class="p-1.5 rounded-lg hover:bg-amber-500/20 text-amber-400 transition cursor-pointer" title="${isPaused ? 'Reactivar' : 'Pausar'}">
                       <i data-lucide="${isPaused ? 'eye' : 'eye-off'}" class="w-4 h-4"></i>
@@ -777,9 +906,7 @@
               </div>
 
               <div class="p-5">
-                <div class="flex items-start justify-between gap-2 mb-2">
-                  <h3 class="font-display font-bold text-base sm:text-lg text-white leading-snug">${escapeHtml(prod.name)}</h3>
-                </div>
+                <h3 class="font-display font-bold text-base sm:text-lg text-white leading-snug mb-2">${escapeHtml(prod.name)}</h3>
                 <p class="text-xs sm:text-sm text-slate-400 leading-relaxed line-clamp-3">${escapeHtml(prod.description || '')}</p>
               </div>
             </div>
@@ -798,8 +925,6 @@
           </article>
         `;
       }).join('');
-
-      lucide.createIcons();
     }
 
     function escapeHtml(str) {
@@ -819,10 +944,9 @@
       setTimeout(() => toast.classList.add('hidden'), 3200);
     }
 
-    // Eventos de búsqueda y filtros
     document.getElementById('search-input').addEventListener('input', (e) => {
       searchQuery = e.target.value;
-      renderProducts();
+      renderAll();
     });
 
     document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -834,7 +958,7 @@
         btn.classList.remove('bg-slate-900', 'text-slate-300', 'font-semibold');
         btn.classList.add('bg-neonCyan', 'text-slate-950', 'font-bold');
         currentCategory = btn.dataset.category;
-        renderProducts();
+        renderAll();
       });
     });
 
@@ -845,7 +969,6 @@
       document.querySelector('[data-category="Todos"]').click();
     };
 
-    // Modales Admin
     window.openLoginModal = () => {
       if (isAdmin) {
         openProductModal();
@@ -896,27 +1019,63 @@
       }
     };
 
-    // Gestión de Productos (CRUD)
-    window.openProductModal = (product = null) => {
+    window.setModalType = (featuredMode) => {
+      const regBtn = document.getElementById('mode-regular-btn');
+      const featBtn = document.getElementById('mode-featured-btn');
+      const checkFeatured = document.getElementById('prod-featured');
+      const badgeBox = document.getElementById('badge-field-box');
+
+      checkFeatured.checked = featuredMode;
+
+      if (featuredMode) {
+        featBtn.classList.add('bg-neonPink', 'text-white');
+        featBtn.classList.remove('text-slate-400');
+        regBtn.classList.remove('bg-slate-800', 'text-white');
+        regBtn.classList.add('text-slate-400');
+        badgeBox.classList.remove('hidden');
+        document.getElementById('product-modal-title').textContent = 'Nueva Publicación Destacada';
+      } else {
+        regBtn.classList.add('bg-slate-800', 'text-white');
+        regBtn.classList.remove('text-slate-400');
+        featBtn.classList.remove('bg-neonPink', 'text-white');
+        featBtn.classList.add('text-slate-400');
+        badgeBox.classList.add('hidden');
+        document.getElementById('product-modal-title').textContent = 'Nuevo Producto';
+      }
+    };
+
+    window.syncFeaturedToggle = () => {
+      setModalType(document.getElementById('prod-featured').checked);
+    };
+
+    window.openFeaturedModal = () => {
+      openProductModal(null, true);
+    };
+
+    window.openProductModal = (product = null, forceFeatured = false) => {
       const form = document.getElementById('product-form');
       form.reset();
       document.getElementById('prod-id').value = '';
       document.getElementById('image-preview-box').classList.add('hidden');
-      document.getElementById('product-modal-title').textContent = product ? 'Editar Producto' : 'Nuevo Producto';
 
       if (product) {
         document.getElementById('prod-id').value = product.id;
         document.getElementById('prod-name').value = product.name || '';
         document.getElementById('prod-category').value = product.category || 'Electrónica';
         document.getElementById('prod-price').value = product.price || '';
+        document.getElementById('prod-badge').value = product.badge || 'DESTACADO';
         document.getElementById('prod-desc').value = product.description || '';
         document.getElementById('prod-image').value = product.image || '';
-        document.getElementById('prod-featured').checked = !!product.featured;
         document.getElementById('prod-active').checked = product.active !== false;
+        setModalType(!!product.featured);
+        document.getElementById('product-modal-title').textContent = 'Editar Publicación';
         if (product.image) updateImagePreview(product.image);
+      } else {
+        setModalType(forceFeatured);
       }
 
       document.getElementById('product-modal').classList.remove('hidden');
+      lucide.createIcons();
     };
 
     window.closeProductModal = () => {
@@ -939,7 +1098,6 @@
       }
     };
 
-    // Comprimir imagen subida desde celular/PC a Base64 ligero
     window.handleImageUpload = (event) => {
       const file = event.target.files[0];
       if (!file) return;
@@ -982,13 +1140,15 @@
       btn.textContent = "Guardando...";
 
       const id = document.getElementById('prod-id').value;
+      const isFeat = document.getElementById('prod-featured').checked;
       const payload = {
         name: document.getElementById('prod-name').value.trim(),
         category: document.getElementById('prod-category').value,
         price: document.getElementById('prod-price').value.trim() || 'Consultar',
+        badge: isFeat ? document.getElementById('prod-badge').value : '',
         description: document.getElementById('prod-desc').value.trim(),
         image: document.getElementById('prod-image').value.trim(),
-        featured: document.getElementById('prod-featured').checked,
+        featured: isFeat,
         active: document.getElementById('prod-active').checked,
       };
 
@@ -996,20 +1156,34 @@
         const productsCol = collection(db, 'artifacts', appId, 'public', 'data', 'products');
         if (id) {
           await updateDoc(doc(productsCol, id), payload);
-          showToast("Producto actualizado");
+          showToast("Publicación actualizada");
         } else {
           payload.createdAt = serverTimestamp();
           await addDoc(productsCol, payload);
-          showToast("Producto publicado en el catálogo");
+          showToast(isFeat ? "Publicación destacada creada" : "Producto cargado en el catálogo");
         }
         closeProductModal();
       } catch (err) {
         alert("Error al guardar: " + err.message);
       } finally {
         btn.disabled = false;
-        btn.textContent = "Guardar Producto";
+        btn.textContent = "Publicar Ahora";
       }
     });
+
+    window.toggleFeatured = async (id, makeFeatured) => {
+      if (!isAdmin || !firebaseReady) return;
+      try {
+        const productRef = doc(db, 'artifacts', appId, 'public', 'data', 'products', id);
+        await updateDoc(productRef, { 
+          featured: makeFeatured,
+          badge: makeFeatured ? 'DESTACADO' : ''
+        });
+        showToast(makeFeatured ? "Movido a Publicaciones Destacadas" : "Quitado de destacados");
+      } catch (err) {
+        alert("Error: " + err.message);
+      }
+    };
 
     window.toggleProductActive = async (id, currentActive) => {
       if (!isAdmin || !firebaseReady) return;
@@ -1018,25 +1192,23 @@
         await updateDoc(productRef, { active: !currentActive });
         showToast(!currentActive ? "Producto visible nuevamente" : "Producto pausado");
       } catch (err) {
-        alert("Error al cambiar estado: " + err.message);
+        alert("Error: " + err.message);
       }
     };
 
     window.deleteProduct = async (id) => {
       if (!isAdmin || !firebaseReady) return;
-      if (!confirm("¿Seguro que querés eliminar este producto del catálogo?")) return;
+      if (!confirm("¿Seguro que querés eliminar esta publicación?")) return;
       try {
         const productRef = doc(db, 'artifacts', appId, 'public', 'data', 'products', id);
         await deleteDoc(productRef);
-        showToast("Producto eliminado");
+        showToast("Publicación eliminada");
       } catch (err) {
         alert("Error al eliminar: " + err.message);
       }
     };
 
-    // Renderizado inicial
-    renderProducts();
-    lucide.createIcons();
+    renderAll();
   </script>
 </body>
 </html>
