@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JULIETA! Venta a Domicilio | Electrónica, Hogar y Varios</title>
+  <meta name="description" content="JULIETA! Venta a Domicilio. Electrónica, artículos para el hogar, accesorios y novedades con envío a domicilio. Consultá por WhatsApp al 2617 04-0339." />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Pacifico&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#070b19',
+            midnightCard: '#0d142b',
+            neonYellow: '#fff066',
+            neonPink: '#ff47b6',
+            neonGreen: '#39ff14',
+            neonCyan: '#00f3ff',
+          },
+          fontFamily: {
+            display: ['Montserrat', 'sans-serif'],
+            script: ['Pacifico', 'cursive'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #070b19;
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 243, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 25%, rgba(255, 71, 182, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(57, 255, 20, 0.05) 0%, transparent 50%);
+    }
+
+    /* Efectos Neón fieles al logo */
+    .glow-yellow {
+      color: #fff68f;
+      text-shadow: 
+        0 0 7px rgba(255, 240, 102, 0.85),
+        0 0 18px rgba(255, 215, 0, 0.65),
+        0 0 34px rgba(255, 190, 0, 0.45);
+    }
+
+    .glow-pink {
+      color: #ff66c4;
+      text-shadow: 
+        0 0 7px rgba(255, 71, 182, 0.9),
+        0 0 18px rgba(255, 20, 147, 0.7),
+        0 0 32px rgba(255, 20, 147, 0.45);
+    }
+
+    .glow-green {
+      color: #5cff3d;
+      text-shadow: 
+        0 0 6px rgba(57, 255, 20, 0.8),
+        0 0 16px rgba(57, 255, 20, 0.45);
+    }
+
+    .glow-cyan {
+      color: #38f6ff;
+      text-shadow: 
+        0 0 6px rgba(0, 243, 255, 0.8),
+        0 0 16px rgba(0, 243, 255, 0.45);
+    }
+
+    .logo-ring {
+      background: radial-gradient(circle at center, #090e24 55%, #040712 100%);
+      box-shadow: 
+        0 0 25px rgba(0, 243, 255, 0.25),
+        0 0 45px rgba(255, 71, 182, 0.2),
+        inset 0 0 20px rgba(0, 243, 255, 0.2);
+      border: 2px solid rgba(0, 243, 255, 0.45);
+    }
+
+    .card-neon {
+      background: rgba(13, 20, 43, 0.82);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-neon:hover {
+      border-color: rgba(0, 243, 255, 0.45);
+      box-shadow: 0 10px 30px -10px rgba(0, 243, 255, 0.22);
+      transform: translateY(-4px);
+    }
+
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25D366 0%, #16a34a 100%);
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+      transition: all 0.2s ease;
+    }
+
+    .btn-whatsapp:hover {
+      filter: brightness(1.08);
+      box-shadow: 0 6px 24px rgba(57, 255, 20, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .btn-tiktok {
+      background: linear-gradient(135deg, #111827 0%, #000000 100%);
+      border: 1px solid rgba(0, 243, 255, 0.5);
+      box-shadow: -2px 0 12px rgba(0, 243, 255, 0.25), 2px 0 12px rgba(255, 71, 182, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    .btn-tiktok:hover {
+      border-color: #ff47b6;
+      box-shadow: -3px 0 16px rgba(0, 243, 255, 0.45), 3px 0 16px rgba(255, 71, 182, 0.45);
+      transform: translateY(-1px);
+    }
+
+    /* Scrollbar personalizada */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #070b19;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00f3ff;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-neonPink selection:text-white">
+
+  <!-- BARRA SUPERIOR ADMIN (Solo visible cuando el administrador inicia sesión) -->
+  <div id="admin-banner" class="hidden sticky top-0 z-50 bg-gradient-to-r from-fuchsia-950/95 via-slate-900/95 to-cyan-950/95 backdrop-blur-md border-b border-neonPink/50 px-4 py-2.5 shadow-lg">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <span class="flex h-2.5 w-2.5 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neonGreen opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-neonGreen"></span>
+        </span>
+        <span class="text-xs sm:text-sm font-bold text-white tracking-wide">MODO ADMINISTRADOR ACTIVO</span>
+        <span id="admin-email-display" class="hidden md:inline text-xs text-cyan-300 bg-slate-950/60 px-2.5 py-0.5 rounded-full border border-cyan-500/30"></span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="openProductModal()" class="inline-flex items-center gap-1.5 bg-neonGreen text-slate-950 hover:brightness-110 font-extrabold text-xs sm:text-sm px-3.5 py-1.5 rounded-lg shadow-md transition cursor-pointer">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          Nuevo Producto
+        </button>
+        <button onclick="logoutAdmin()" class="inline-flex items-center gap-1.5 bg-slate-800 hover:bg-rose-950 text-slate-200 hover:text-rose-200 border border-slate-700 hover:border-rose-500/50 text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-lg transition cursor-pointer">
+          <i data-lucide="log-out" class="w-4 h-4"></i>
+          Salir
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="border-b border-white/10 bg-midnight/80 backdrop-blur-md sticky top-0 z-40" id="main-header">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-full logo-ring flex items-center justify-center font-display font-black text-xs text-neonYellow">
+          J!
+        </div>
+        <div class="leading-none">
+          <span class="font-display font-extrabold tracking-wider text-base sm:text-lg glow-yellow block">JULIETA!</span>
+          <span class="font-script text-xs text-neonPink">Venta a Domicilio</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="#catalogo" class="hover:text-neonCyan transition">Catálogo</a>
+        <a href="#canales" class="hover:text-neonPink transition">Canales y Redes</a>
+        <a href="#como-comprar" class="hover:text-neonGreen transition">¿Cómo pedir?</a>
+      </nav>
+
+      <div class="flex items-center gap-2.5">
+        <a href="https://www.tiktok.com/@alu4082?lang=es" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full bg-slate-900 border border-cyan-500/40 text-cyan-300 hover:text-white hover:border-neonPink transition" title="Ver TikTok @alu4082">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+        </a>
+        <a href="https://wa.me/5492617040339?text=Hola%20Julieta!%20Vi%20tu%20p%C3%A1gina%20web%20y%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" class="btn-whatsapp text-slate-950 font-bold text-xs sm:text-sm px-3.5 py-2 rounded-full inline-flex items-center gap-1.5">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span class="hidden sm:inline">2617 04-0339</span>
+          <span class="sm:hidden">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-10 pb-14 md:pt-16 md:pb-20 px-4 overflow-hidden">
+    <div class="max-w-5xl mx-auto flex flex-col items-center text-center">
+      
+      <!-- Emblema Circular Neón inspirado en el Logo -->
+      <div class="relative mb-8">
+        <div class="w-60 h-60 sm:w-72 sm:h-72 rounded-full logo-ring flex flex-col items-center justify-center p-5 relative overflow-hidden">
+          <!-- Arco texto superior -->
+          <span class="text-[10px] sm:text-xs font-display font-bold tracking-[0.22em] uppercase glow-cyan mb-1">
+            ELECTRÓNICA • HOGAR • MÁS
+          </span>
+          
+          <!-- JULIETA! -->
+          <h1 class="font-display font-black text-4xl sm:text-5xl tracking-wider glow-yellow leading-none my-1">
+            JULIETA!
+          </h1>
+          
+          <!-- Venta a Domicilio -->
+          <p class="font-script text-3xl sm:text-4xl glow-pink -rotate-3 leading-tight my-1">
+            Venta a<br>Domicilio
+          </p>
+          
+          <!-- Teléfono en verde neón -->
+          <div class="mt-2 pt-1.5 border-t border-white/10">
+            <span class="font-display font-extrabold text-sm sm:text-base tracking-wider glow-green">
+              2617 04-0339
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <p class="max-w-2xl text-slate-300 text-base sm:text-lg leading-relaxed mb-8">
+        Todo lo que buscás en <strong class="text-white">electrónica, bazar, artículos para el hogar, accesorios y novedades</strong> en un solo lugar. Mirá el catálogo actualizado, sumate a nuestros canales de difusión y pedí directo a tu domicilio.
+      </p>
+
+      <!-- Botones Principales de Acción -->
+      <div class="flex flex-wrap items-center justify-center gap-3.5 w-full sm:w-auto">
+        <a href="#catalogo" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-neonCyan text-slate-950 font-display font-extrabold text-sm uppercase tracking-wider hover:brightness-110 shadow-[0_0_20px_rgba(0,243,255,0.4)] transition inline-flex items-center justify-center gap-2">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          Ver Catálogo
+        </a>
+        <a href="https://wa.me/5492617040339?text=Hola%20Julieta!%20Quiero%20que%20me%20agregues%20al%20canal%20/%20lista%20de%20difusi%C3%B3n%20para%20ver%20las%20novedades." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-3.5 rounded-xl btn-whatsapp text-slate-950 font-display font-extrabold text-sm uppercase tracking-wider inline-flex items-center justify-center gap-2">
+          <i data-lucide="bell-ring" class="w-4 h-4"></i>
+          Sumarme a Difusión WhatsApp
+        </a>
+        <a href="https://www.tiktok.com/@alu4082?lang=es" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-3.5 rounded-xl btn-tiktok text-white font-display font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center gap-2">
+          <svg class="w-4 h-4 fill-current text-neonPink" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+          Ver Videos en TikTok
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CATÁLOGO -->
+  <section id="catalogo" class="py-12 px-4 border-t border-white/10">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="text-xs font-display font-bold tracking-widest uppercase text-neonCyan">Productos Disponibles</span>
+          <h2 class="font-display font-black text-2xl sm:text-3xl text-white mt-1">Catálogo de Novedades</h2>
+        </div>
+
+        <!-- Buscador -->
+        <div class="relative w-full md:w-80">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+          <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Buscar parlante, termo, luz led..." 
+            class="w-full bg-slate-900/90 border border-white/15 focus:border-neonCyan rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-slate-400 outline-none transition"
+          />
+        </div>
+      </div>
+
+      <!-- Filtros por Categoría -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-6 no-scrollbar" id="category-filters">
+        <button data-category="Todos" class="filter-btn active px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-neonCyan text-slate-950 transition cursor-pointer whitespace-nowrap">
+          Todos
+        </button>
+        <button data-category="Electrónica" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-900 text-slate-300 border border-white/10 hover:border-neonCyan/50 transition cursor-pointer whitespace-nowrap">
+          Electrónica y Audio
+        </button>
+        <button data-category="Hogar y Bazar" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-900 text-slate-300 border border-white/10 hover:border-neonCyan/50 transition cursor-pointer whitespace-nowrap">
+          Hogar y Bazar
+        </button>
+        <button data-category="Iluminación" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-900 text-slate-300 border border-white/10 hover:border-neonCyan/50 transition cursor-pointer whitespace-nowrap">
+          Iluminación LED
+        </button>
+        <button data-category="Accesorios y Varios" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-900 text-slate-300 border border-white/10 hover:border-neonCyan/50 transition cursor-pointer whitespace-nowrap">
+          Accesorios y Varios
+        </button>
+      </div>
+
+      <!-- Grilla de Productos -->
+      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Renderizado dinámico por JS -->
+      </div>
+
+      <!-- Estado Vacío -->
+      <div id="empty-state" class="hidden text-center py-16 px-4 card-neon rounded-2xl">
+        <i data-lucide="package-search" class="w-12 h-12 text-slate-500 mx-auto mb-3"></i>
+        <h3 class="text-lg font-bold text-white">No encontramos productos con ese filtro</h3>
+        <p class="text-sm text-slate-400 mt-1 mb-4">Probá buscando con otra palabra o consultanos directo por WhatsApp si buscás algo puntual.</p>
+        <button onclick="resetFilters()" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold text-neonCyan transition cursor-pointer">
+          Ver todos los productos
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CANALES DE DIFUSIÓN Y REDES -->
+  <section id="canales" class="py-14 px-4 border-t border-white/10 bg-slate-950/50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-display font-bold tracking-widest uppercase text-neonPink">Enterate Primero</span>
+        <h2 class="font-display font-black text-2xl sm:text-3xl text-white mt-1">Canales de Difusión y Redes</h2>
+        <p class="text-sm sm:text-base text-slate-400 mt-2">
+          Subimos ingresos nuevos todas las semanas, ofertas relámpago y demostraciones reales de los productos.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Tarjeta Difusión WhatsApp -->
+        <div class="card-neon rounded-2xl p-6 sm:p-8 flex flex-col justify-between border-neonGreen/30">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/15 border border-neonGreen/40 flex items-center justify-center text-neonGreen mb-5">
+              <i data-lucide="message-circle" class="w-6 h-6"></i>
+            </div>
+            <span class="inline-block text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-emerald-500/15 text-neonGreen mb-3">
+              Ingresos Semanales
+            </span>
+            <h3 class="font-display font-extrabold text-xl text-white mb-2">Difusión Oficial por WhatsApp</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-6">
+              Agendá nuestro número <strong class="text-neonGreen">2617 04-0339</strong> y escribinos para sumarte a nuestra lista de difusión y estados. Recibís precios, promos y novedades directo en tu celu sin grupos molestos.
+            </p>
+          </div>
+          <a href="https://wa.me/5492617040339?text=Hola%20Julieta!%20Me%20gustar%C3%ADa%20sumarme%20a%20tu%20difusi%C3%B3n%20de%20WhatsApp%20para%20ver%20los%20productos%20nuevos." target="_blank" rel="noopener noreferrer" class="btn-whatsapp w-full py-3.5 px-5 rounded-xl text-slate-950 font-display font-extrabold text-sm text-center inline-flex items-center justify-center gap-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            Pedir Alta en Difusión (2617 04-0339)
+          </a>
+        </div>
+
+        <!-- Tarjeta TikTok -->
+        <div class="card-neon rounded-2xl p-6 sm:p-8 flex flex-col justify-between border-neonPink/30">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-fuchsia-500/15 border border-neonPink/40 flex items-center justify-center text-neonPink mb-5">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+            </div>
+            <span class="inline-block text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-fuchsia-500/15 text-neonPink mb-3">
+              Videos y Demos Reales
+            </span>
+            <h3 class="font-display font-extrabold text-xl text-white mb-2">TikTok Oficial (@alu4082)</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-6">
+              Mirá cómo funcionan los parlantes, luces, gadgets de electrónica y artículos de hogar antes de comprarlos. Seguinos para no perderte ningún ingreso.
+            </p>
+          </div>
+          <a href="https://www.tiktok.com/@alu4082?lang=es" target="_blank" rel="noopener noreferrer" class="btn-tiktok w-full py-3.5 px-5 rounded-xl text-white font-display font-extrabold text-sm text-center inline-flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 fill-current text-neonCyan" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+            Seguir en TikTok (@alu4082)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO COMPRAR -->
+  <section id="como-comprar" class="py-12 px-4 border-t border-white/10">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div class="p-5 rounded-2xl bg-slate-900/40 border border-white/5">
+          <div class="w-10 h-10 rounded-full bg-cyan-500/15 text-neonCyan font-display font-black flex items-center justify-center mx-auto mb-3">1</div>
+          <h4 class="font-bold text-white mb-1">Elegí lo que te guste</h4>
+          <p class="text-xs sm:text-sm text-slate-400">Explorá el catálogo o mirá los videos en TikTok para ver cada detalle.</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-slate-900/40 border border-white/5">
+          <div class="w-10 h-10 rounded-full bg-fuchsia-500/15 text-neonPink font-display font-black flex items-center justify-center mx-auto mb-3">2</div>
+          <h4 class="font-bold text-white mb-1">Consultá stock por WhatsApp</h4>
+          <p class="text-xs sm:text-sm text-slate-400">Tocá el botón "Consultar" del producto y te respondemos al instante al 2617 04-0339.</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-slate-900/40 border border-white/5">
+          <div class="w-10 h-10 rounded-full bg-emerald-500/15 text-neonGreen font-display font-black flex items-center justify-center mx-auto mb-3">3</div>
+          <h4 class="font-bold text-white mb-1">Recibilo a Domicilio</h4>
+          <p class="text-xs sm:text-sm text-slate-400">Coordinamos día, horario y zona de entrega de forma rápida y segura.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 py-10 px-4 bg-midnight">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <span class="font-display font-extrabold text-base glow-yellow">JULIETA!</span>
+        <span class="font-script text-sm text-neonPink ml-1.5">Venta a Domicilio</span>
+        <p class="text-xs text-slate-400 mt-1">Electrónica • Artículos del Hogar • Bazar • Accesorios y Varios</p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
+        <a href="https://wa.me/5492617040339" target="_blank" rel="noopener noreferrer" class="hover:text-neonGreen transition flex items-center gap-1">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i> 2617 04-0339
+        </a>
+        <a href="https://www.tiktok.com/@alu4082?lang=es" target="_blank" rel="noopener noreferrer" class="hover:text-neonPink transition flex items-center gap-1">
+          TikTok @alu4082
+        </a>
+        <button onclick="openLoginModal()" class="text-slate-500 hover:text-neonCyan transition inline-flex items-center gap-1 cursor-pointer" title="Acceso Administración">
+          <i data-lucide="lock" class="w-3.5 h-3.5"></i> Admin
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a href="https://wa.me/5492617040339?text=Hola%20Julieta!%20Vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="fixed bottom-5 right-5 z-40 btn-whatsapp text-slate-950 p-3.5 sm:px-4 sm:py-3 rounded-full shadow-2xl flex items-center gap-2 font-bold text-sm">
+    <i data-lucide="message-circle" class="w-6 h-6"></i>
+    <span class="hidden sm:inline">2617 04-0339</span>
+  </a>
+
+  <!-- MODAL LOGIN ADMINISTRADOR -->
+  <div id="login-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-midnightCard border border-cyan-500/40 rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+      <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white cursor-pointer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      
+      <div class="flex items-center gap-2.5 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-neonCyan/40 flex items-center justify-center text-neonCyan">
+          <i data-lucide="shield-check" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="font-display font-extrabold text-lg text-white">Acceso Administrador</h3>
+          <p class="text-xs text-slate-400">Ingresá para agregar, editar o pausar productos</p>
+        </div>
+      </div>
+
+      <form id="login-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Correo electrónico</label>
+          <input type="email" id="admin-email" required placeholder="admin@julieta.com" class="w-full bg-slate-950 border border-white/15 focus:border-neonCyan rounded-xl px-3.5 py-2.5 text-sm text-white outline-none" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Contraseña</label>
+          <input type="password" id="admin-password" required placeholder="••••••••" class="w-full bg-slate-950 border border-white/15 focus:border-neonCyan rounded-xl px-3.5 py-2.5 text-sm text-white outline-none" />
+        </div>
+        
+        <p id="login-error" class="hidden text-xs text-rose-400 bg-rose-950/50 border border-rose-500/30 rounded-lg p-2.5"></p>
+
+        <button type="submit" id="login-submit-btn" class="w-full py-3 rounded-xl bg-neonCyan text-slate-950 font-display font-extrabold text-sm hover:brightness-110 transition cursor-pointer">
+          Ingresar al Panel
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL AGREGAR / EDITAR PRODUCTO -->
+  <div id="product-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-midnightCard border border-neonPink/40 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative my-8">
+      <button onclick="closeProductModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white cursor-pointer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <h3 id="product-modal-title" class="font-display font-extrabold text-xl text-white mb-1">Nuevo Producto</h3>
+      <p class="text-xs text-slate-400 mb-5">Completá los datos del artículo para publicarlo en el catálogo.</p>
+
+      <form id="product-form" class="space-y-4">
+        <input type="hidden" id="prod-id" />
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Nombre del producto *</label>
+          <input type="text" id="prod-name" required placeholder="Ej: Parlante Bluetooth RGB Portátil" class="w-full bg-slate-950 border border-white/15 focus:border-neonPink rounded-xl px-3.5 py-2.5 text-sm text-white outline-none" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Categoría *</label>
+            <select id="prod-category" class="w-full bg-slate-950 border border-white/15 focus:border-neonPink rounded-xl px-3.5 py-2.5 text-sm text-white outline-none">
+              <option value="Electrónica">Electrónica y Audio</option>
+              <option value="Hogar y Bazar">Hogar y Bazar</option>
+              <option value="Iluminación">Iluminación LED</option>
+              <option value="Accesorios y Varios">Accesorios y Varios</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Precio (Opcional)</label>
+            <input type="text" id="prod-price" placeholder="Ej: $18.500 o Consultar" class="w-full bg-slate-950 border border-white/15 focus:border-neonPink rounded-xl px-3.5 py-2.5 text-sm text-white outline-none" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Descripción breve *</label>
+          <textarea id="prod-desc" rows="2" required placeholder="Características principales, medidas, colores disponibles..." class="w-full bg-slate-950 border border-white/15 focus:border-neonPink rounded-xl px-3.5 py-2 text-sm text-white outline-none"></textarea>
+        </div>
+
+        <!-- Imagen: Subir archivo o URL -->
+        <div class="p-3.5 rounded-xl bg-slate-950/80 border border-white/10 space-y-3">
+          <label class="block text-xs font-semibold text-slate-300">Foto del producto</label>
+          
+          <div class="flex flex-col sm:flex-row gap-2">
+            <label class="flex-1 cursor-pointer bg-slate-900 hover:bg-slate-800 border border-dashed border-cyan-500/50 rounded-xl p-2.5 text-center text-xs text-cyan-300 font-semibold transition flex items-center justify-center gap-1.5">
+              <i data-lucide="image-plus" class="w-4 h-4"></i>
+              <span>Subir desde celular / PC</span>
+              <input type="file" id="prod-file" accept="image/*" class="hidden" onchange="handleImageUpload(event)" />
+            </label>
+          </div>
+
+          <div>
+            <input type="text" id="prod-image" placeholder="O pegá aquí el enlace (URL) de la imagen..." class="w-full bg-slate-900 border border-white/10 focus:border-neonCyan rounded-lg px-3 py-2 text-xs text-white outline-none" oninput="updateImagePreview(this.value)" />
+          </div>
+
+          <div id="image-preview-box" class="hidden relative w-full h-36 rounded-lg overflow-hidden border border-white/10 bg-slate-900">
+            <img id="image-preview" src="" alt="Vista previa" class="w-full h-full object-cover" />
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between pt-1">
+          <label class="inline-flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" id="prod-featured" class="rounded border-slate-700 bg-slate-950 text-neonPink focus:ring-0" />
+            <span class="text-xs font-semibold text-slate-300">Destacar como "Nuevo Ingreso"</span>
+          </label>
+
+          <label class="inline-flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" id="prod-active" checked class="rounded border-slate-700 bg-slate-950 text-neonGreen focus:ring-0" />
+            <span class="text-xs font-semibold text-slate-300">Visible al público</span>
+          </label>
+        </div>
+
+        <div class="flex items-center justify-end gap-2.5 pt-3 border-t border-white/10">
+          <button type="button" onclick="closeProductModal()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300 transition cursor-pointer">
+            Cancelar
+          </button>
+          <button type="submit" id="save-product-btn" class="px-5 py-2.5 rounded-xl bg-neonGreen text-slate-950 font-display font-extrabold text-xs uppercase tracking-wider hover:brightness-110 transition cursor-pointer">
+            Guardar Producto
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICACIONES -->
+  <div id="toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 hidden bg-slate-900 border border-neonCyan/60 text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-2xl"></div>
+
+  <!-- FIREBASE SDK & LÓGICA DE LA APP -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { 
+      getAuth, 
+      signInWithEmailAndPassword, 
+      signInAnonymously,
+      signOut, 
+      onAuthStateChanged 
+    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { 
+      getFirestore, 
+      collection, 
+      addDoc, 
+      updateDoc, 
+      deleteDoc, 
+      doc, 
+      onSnapshot, 
+      serverTimestamp 
+    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    // =========================================================================
+    // CONFIGURACIÓN DE FIREBASE (Reemplazar con tus claves al subir a GitHub)
+    // =========================================================================
+    const defaultFirebaseConfig = {
+      apiKey: "TU_API_KEY",
+      authDomain: "TU_PROYECTO.firebaseapp.com",
+      projectId: "TU_PROYECTO",
+      storageBucket: "TU_PROYECTO.appspot.com",
+      messagingSenderId: "000000000000",
+      appId: "1:000000000000:web:0000000000000000"
+    };
+
+    const firebaseConfig = typeof __firebase_config !== 'undefined' 
+      ? JSON.parse(__firebase_config) 
+      : defaultFirebaseConfig;
+
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'julieta-venta-domicilio';
+
+    // Productos de ejemplo iniciales (se muestran si aún no hay productos cargados en Firestore)
+    const SAMPLE_PRODUCTS = [
+      {
+        id: 'sample-1',
+        name: 'Parlante Portátil Bluetooth RGB',
+        category: 'Electrónica',
+        price: '$24.500',
+        description: 'Sonido potente con luces LED rítmicas, entrada USB, tarjeta SD, radio FM y batería recargable.',
+        image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=800&q=80',
+        featured: true,
+        active: true,
+        isSample: true
+      },
+      {
+        id: 'sample-2',
+        name: 'Tira LED Neón Flexible 5 Metros',
+        category: 'Iluminación',
+        price: '$16.900',
+        description: 'Ideal para decorar habitaciones, escritorios o locales. Incluye fuente de alimentación y control.',
+        image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80',
+        featured: true,
+        active: true,
+        isSample: true
+      },
+      {
+        id: 'sample-3',
+        name: 'Termo Acero Inoxidable 1 Litro + Pico Cebador',
+        category: 'Hogar y Bazar',
+        price: '$21.000',
+        description: 'Doble capa térmica que mantiene el agua caliente por 24 hs. Tapa resistente y manija reforzada.',
+        image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=80',
+        featured: false,
+        active: true,
+        isSample: true
+      },
+      {
+        id: 'sample-4',
+        name: 'Auriculares Inalámbricos Vincha P9',
+        category: 'Electrónica',
+        price: '$18.000',
+        description: 'Conexión Bluetooth rápida, micrófono incorporado, almohadillas acolchadas y cable de carga.',
+        image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80',
+        featured: false,
+        active: true,
+        isSample: true
+      },
+      {
+        id: 'sample-5',
+        name: 'Mini Picadora Eléctrica Recargable USB',
+        category: 'Hogar y Bazar',
+        price: '$13.500',
+        description: 'Cuchillas de acero inoxidable, ideal para ajo, cebolla, verduras y frutos secos en segundos.',
+        image: 'https://images.unsplash.com/photo-1585515320310-259814833e62?auto=format&fit=crop&w=800&q=80',
+        featured: true,
+        active: true,
+        isSample: true
+      },
+      {
+        id: 'sample-6',
+        name: 'Soporte Magnético Reforzado para Celular',
+        category: 'Accesorios y Varios',
+        price: '$8.500',
+        description: 'Rotación 360°, imán de alta fijación para tablero o rejilla de auto. Compatible con todos los modelos.',
+        image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=800&q=80',
+        featured: false,
+        active: true,
+        isSample: true
+      }
+    ];
+
+    let db = null;
+    let auth = null;
+    let isAdmin = false;
+    let allProducts = [...SAMPLE_PRODUCTS];
+    let currentCategory = 'Todos';
+    let searchQuery = '';
+    let firebaseReady = false;
+
+    // Inicializar Firebase
+    try {
+      if (firebaseConfig && firebaseConfig.apiKey && firebaseConfig.apiKey !== "TU_API_KEY") {
+        const app = initializeApp(firebaseConfig);
+        auth = getAuth(app);
+        db = getFirestore(app);
+        firebaseReady = true;
+
+        onAuthStateChanged(auth, async (user) => {
+          if (user && !user.isAnonymous) {
+            isAdmin = true;
+            document.getElementById('admin-banner').classList.remove('hidden');
+            document.getElementById('main-header').classList.remove('top-0');
+            document.getElementById('main-header').classList.add('top-[46px]');
+            document.getElementById('admin-email-display').textContent = user.email;
+          } else {
+            isAdmin = false;
+            document.getElementById('admin-banner').classList.add('hidden');
+            document.getElementById('main-header').classList.add('top-0');
+            document.getElementById('main-header').classList.remove('top-[46px]');
+            if (!user) {
+              try {
+                await signInAnonymously(auth);
+              } catch (e) {
+                console.warn("Auth anónimo no habilitado:", e.message);
+              }
+            }
+          }
+          renderProducts();
+        });
+
+        // Escuchar colección pública de productos
+        const productsCol = collection(db, 'artifacts', appId, 'public', 'data', 'products');
+        onSnapshot(productsCol, (snapshot) => {
+          const firestoreProducts = [];
+          snapshot.forEach((docSnap) => {
+            firestoreProducts.push({ id: docSnap.id, ...docSnap.data() });
+          });
+
+          if (firestoreProducts.length > 0) {
+            // Ordenar por fecha de creación más reciente
+            firestoreProducts.sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0));
+            allProducts = firestoreProducts;
+          } else {
+            allProducts = [...SAMPLE_PRODUCTS];
+          }
+          renderProducts();
+        }, (err) => {
+          console.warn("Usando catálogo local de respaldo:", err.message);
+          renderProducts();
+        });
+      }
+    } catch (error) {
+      console.warn("Modo local sin Firebase:", error);
+    }
+
+    // Renderizado de productos
+    function renderProducts() {
+      const grid = document.getElementById('products-grid');
+      const emptyState = document.getElementById('empty-state');
+
+      const filtered = allProducts.filter(p => {
+        // Si no es admin, ocultar los pausados
+        if (!isAdmin && p.active === false) return false;
+        const matchCat = currentCategory === 'Todos' || p.category === currentCategory;
+        const q = searchQuery.toLowerCase().trim();
+        const matchText = !q || 
+          (p.name && p.name.toLowerCase().includes(q)) || 
+          (p.description && p.description.toLowerCase().includes(q)) ||
+          (p.category && p.category.toLowerCase().includes(q));
+        return matchCat && matchText;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        lucide.createIcons();
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      grid.innerHTML = filtered.map(prod => {
+        const isPaused = prod.active === false;
+        const waText = encodeURIComponent(`Hola Julieta! Me interesa este producto de tu catálogo: *${prod.name}*${prod.price ? ` (${prod.price})` : ''}. ¿Tenés stock?`);
+        const imgUrl = prod.image || 'https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=800&q=80';
+
+        return `
+          <article class="card-neon rounded-2xl overflow-hidden flex flex-col justify-between relative ${isPaused ? 'opacity-60 border-amber-500/40' : ''}">
+            <div>
+              <div class="relative h-52 bg-slate-950 overflow-hidden group">
+                <img src="${imgUrl}" alt="${escapeHtml(prod.name)}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+                
+                <!-- Etiquetas superiores -->
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-midnight/85 backdrop-blur-md text-neonCyan border border-cyan-500/30">
+                    ${escapeHtml(prod.category || 'Varios')}
+                  </span>
+                  ${prod.featured ? `<span class="px-2.5 py-1 rounded-md text-[11px] font-extrabold bg-neonPink text-white shadow">NUEVO</span>` : ''}
+                  ${isPaused ? `<span class="px-2.5 py-1 rounded-md text-[11px] font-extrabold bg-amber-500 text-slate-950">PAUSADO</span>` : ''}
+                </div>
+
+                <!-- Controles rápidos de Administrador -->
+                ${isAdmin && !prod.isSample ? `
+                  <div class="absolute top-3 right-3 flex items-center gap-1.5 bg-midnight/90 backdrop-blur-md p-1.5 rounded-xl border border-white/15">
+                    <button onclick="editProduct('${prod.id}')" class="p-1.5 rounded-lg hover:bg-cyan-500/20 text-neonCyan transition cursor-pointer" title="Editar producto">
+                      <i data-lucide="pencil" class="w-4 h-4"></i>
+                    </button>
+                    <button onclick="toggleProductActive('${prod.id}', ${!isPaused})" class="p-1.5 rounded-lg hover:bg-amber-500/20 text-amber-400 transition cursor-pointer" title="${isPaused ? 'Reactivar' : 'Pausar'}">
+                      <i data-lucide="${isPaused ? 'eye' : 'eye-off'}" class="w-4 h-4"></i>
+                    </button>
+                    <button onclick="deleteProduct('${prod.id}')" class="p-1.5 rounded-lg hover:bg-rose-500/20 text-rose-400 transition cursor-pointer" title="Eliminar">
+                      <i data-lucide="trash-2" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                ` : ''}
+              </div>
+
+              <div class="p-5">
+                <div class="flex items-start justify-between gap-2 mb-2">
+                  <h3 class="font-display font-bold text-base sm:text-lg text-white leading-snug">${escapeHtml(prod.name)}</h3>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed line-clamp-3">${escapeHtml(prod.description || '')}</p>
+              </div>
+            </div>
+
+            <div class="px-5 pb-5 pt-2 flex items-center justify-between gap-3 border-t border-white/5">
+              <div>
+                <span class="block text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Precio</span>
+                <span class="font-display font-extrabold text-base sm:text-lg text-neonYellow">${escapeHtml(prod.price || 'Consultar')}</span>
+              </div>
+
+              <a href="https://wa.me/5492617040339?text=${waText}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp text-slate-950 font-display font-extrabold text-xs px-4 py-2.5 rounded-xl inline-flex items-center gap-1.5">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                Consultar
+              </a>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 3200);
+    }
+
+    // Eventos de búsqueda y filtros
+    document.getElementById('search-input').addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderProducts();
+    });
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('bg-neonCyan', 'text-slate-950', 'font-bold');
+          b.classList.add('bg-slate-900', 'text-slate-300', 'font-semibold');
+        });
+        btn.classList.remove('bg-slate-900', 'text-slate-300', 'font-semibold');
+        btn.classList.add('bg-neonCyan', 'text-slate-950', 'font-bold');
+        currentCategory = btn.dataset.category;
+        renderProducts();
+      });
+    });
+
+    window.resetFilters = () => {
+      searchQuery = '';
+      currentCategory = 'Todos';
+      document.getElementById('search-input').value = '';
+      document.querySelector('[data-category="Todos"]').click();
+    };
+
+    // Modales Admin
+    window.openLoginModal = () => {
+      if (isAdmin) {
+        openProductModal();
+        return;
+      }
+      document.getElementById('login-error').classList.add('hidden');
+      document.getElementById('login-modal').classList.remove('hidden');
+    };
+
+    window.closeLoginModal = () => {
+      document.getElementById('login-modal').classList.add('hidden');
+    };
+
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('admin-email').value.trim();
+      const pass = document.getElementById('admin-password').value;
+      const errBox = document.getElementById('login-error');
+      const btn = document.getElementById('login-submit-btn');
+
+      if (!firebaseReady) {
+        errBox.textContent = "Configurá las credenciales de Firebase en el código para habilitar el inicio de sesión.";
+        errBox.classList.remove('hidden');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = "Verificando...";
+      errBox.classList.add('hidden');
+
+      try {
+        await signInWithEmailAndPassword(auth, email, pass);
+        closeLoginModal();
+        showToast("Sesión de administrador iniciada");
+      } catch (error) {
+        errBox.textContent = "Correo o contraseña incorrectos.";
+        errBox.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Ingresar al Panel";
+      }
+    });
+
+    window.logoutAdmin = async () => {
+      if (auth) {
+        await signOut(auth);
+        showToast("Sesión cerrada");
+      }
+    };
+
+    // Gestión de Productos (CRUD)
+    window.openProductModal = (product = null) => {
+      const form = document.getElementById('product-form');
+      form.reset();
+      document.getElementById('prod-id').value = '';
+      document.getElementById('image-preview-box').classList.add('hidden');
+      document.getElementById('product-modal-title').textContent = product ? 'Editar Producto' : 'Nuevo Producto';
+
+      if (product) {
+        document.getElementById('prod-id').value = product.id;
+        document.getElementById('prod-name').value = product.name || '';
+        document.getElementById('prod-category').value = product.category || 'Electrónica';
+        document.getElementById('prod-price').value = product.price || '';
+        document.getElementById('prod-desc').value = product.description || '';
+        document.getElementById('prod-image').value = product.image || '';
+        document.getElementById('prod-featured').checked = !!product.featured;
+        document.getElementById('prod-active').checked = product.active !== false;
+        if (product.image) updateImagePreview(product.image);
+      }
+
+      document.getElementById('product-modal').classList.remove('hidden');
+    };
+
+    window.closeProductModal = () => {
+      document.getElementById('product-modal').classList.add('hidden');
+    };
+
+    window.editProduct = (id) => {
+      const prod = allProducts.find(p => p.id === id);
+      if (prod) openProductModal(prod);
+    };
+
+    window.updateImagePreview = (url) => {
+      const box = document.getElementById('image-preview-box');
+      const img = document.getElementById('image-preview');
+      if (url && url.trim().length > 5) {
+        img.src = url.trim();
+        box.classList.remove('hidden');
+      } else {
+        box.classList.add('hidden');
+      }
+    };
+
+    // Comprimir imagen subida desde celular/PC a Base64 ligero
+    window.handleImageUpload = (event) => {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          const MAX_WIDTH = 700;
+          let width = img.width;
+          let height = img.height;
+
+          if (width > MAX_WIDTH) {
+            height *= MAX_WIDTH / width;
+            width = MAX_WIDTH;
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+
+          const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.78);
+          document.getElementById('prod-image').value = compressedDataUrl;
+          updateImagePreview(compressedDataUrl);
+          showToast("Foto cargada y optimizada");
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    };
+
+    document.getElementById('product-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!isAdmin || !firebaseReady) return;
+
+      const btn = document.getElementById('save-product-btn');
+      btn.disabled = true;
+      btn.textContent = "Guardando...";
+
+      const id = document.getElementById('prod-id').value;
+      const payload = {
+        name: document.getElementById('prod-name').value.trim(),
+        category: document.getElementById('prod-category').value,
+        price: document.getElementById('prod-price').value.trim() || 'Consultar',
+        description: document.getElementById('prod-desc').value.trim(),
+        image: document.getElementById('prod-image').value.trim(),
+        featured: document.getElementById('prod-featured').checked,
+        active: document.getElementById('prod-active').checked,
+      };
+
+      try {
+        const productsCol = collection(db, 'artifacts', appId, 'public', 'data', 'products');
+        if (id) {
+          await updateDoc(doc(productsCol, id), payload);
+          showToast("Producto actualizado");
+        } else {
+          payload.createdAt = serverTimestamp();
+          await addDoc(productsCol, payload);
+          showToast("Producto publicado en el catálogo");
+        }
+        closeProductModal();
+      } catch (err) {
+        alert("Error al guardar: " + err.message);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Guardar Producto";
+      }
+    });
+
+    window.toggleProductActive = async (id, currentActive) => {
+      if (!isAdmin || !firebaseReady) return;
+      try {
+        const productRef = doc(db, 'artifacts', appId, 'public', 'data', 'products', id);
+        await updateDoc(productRef, { active: !currentActive });
+        showToast(!currentActive ? "Producto visible nuevamente" : "Producto pausado");
+      } catch (err) {
+        alert("Error al cambiar estado: " + err.message);
+      }
+    };
+
+    window.deleteProduct = async (id) => {
+      if (!isAdmin || !firebaseReady) return;
+      if (!confirm("¿Seguro que querés eliminar este producto del catálogo?")) return;
+      try {
+        const productRef = doc(db, 'artifacts', appId, 'public', 'data', 'products', id);
+        await deleteDoc(productRef);
+        showToast("Producto eliminado");
+      } catch (err) {
+        alert("Error al eliminar: " + err.message);
+      }
+    };
+
+    // Renderizado inicial
+    renderProducts();
+    lucide.createIcons();
+  </script>
+</body>
+</html>
