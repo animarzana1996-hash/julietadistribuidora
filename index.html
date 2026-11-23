@@ -4,8 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JULIETA! Venta a Domicilio</title>
-<meta name="description" content="JULIETA! Electrónica, hogar, bazar y novedades.">
+<title>JULIETA DISTRIBUIDORA | Venta a Domicilio</title>
+<meta name="description" content="JULIETA DISTRIBUIDORA. Electrónica, hogar, bazar y novedades a domicilio.">
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
@@ -17,18 +18,22 @@
   --amarillo:#fff066;
   --verde:#39ff14;
 }
+
 * {box-sizing:border-box}
 html {scroll-behavior:smooth}
+
 body {
   margin:0;
   background:var(--fondo);
   color:white;
   font-family:Montserrat,Arial,sans-serif;
 }
+
 a {text-decoration:none;color:inherit}
 button,input,textarea,select {font-family:inherit}
 button {cursor:pointer}
 button:disabled {opacity:.6;cursor:wait}
+
 header {
   background:#080e20;
   border-bottom:1px solid #ffffff20;
@@ -36,6 +41,7 @@ header {
   top:0;
   z-index:30;
 }
+
 nav {
   max-width:1200px;
   margin:auto;
@@ -46,17 +52,27 @@ nav {
   gap:15px;
   flex-wrap:wrap;
 }
+
 .brand {
   color:var(--amarillo);
   font-weight:900;
   text-shadow:0 0 14px gold;
 }
+
 .script {
   font-family:Pacifico,cursive;
   color:var(--rosa);
 }
-.nav-links {display:flex;gap:20px;font-size:12px}
+
+.nav-links {
+  display:flex;
+  gap:20px;
+  font-size:12px;
+  flex-wrap:wrap;
+}
+
 .nav-links a:hover {color:var(--cyan)}
+
 .btn {
   display:inline-block;
   padding:13px 19px;
@@ -67,15 +83,22 @@ nav {
   text-align:center;
   transition:.2s;
 }
-.btn:hover {filter:brightness(1.12);transform:translateY(-2px)}
+
+.btn:hover {
+  filter:brightness(1.12);
+  transform:translateY(-2px);
+}
+
 .cyan {background:var(--cyan);color:#06131c}
 .green {background:#25d366;color:#061c10}
 .pink {background:var(--rosa);color:white}
 .dark {background:#202c44;color:white}
+
 .instagram {
   background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf);
   color:white;
 }
+
 .tiktok {
   background:#050505;
   color:white;
@@ -84,11 +107,15 @@ nav {
 }
 
 /* PORTADA */
+
 .hero {
   text-align:center;
   padding:45px 18px 48px;
   background:radial-gradient(ellipse at center,#192747,#070b19 75%);
 }
+
+/* LOGO JULIETA DISTRIBUIDORA */
+
 .logo-julieta {
   width:255px;
   height:255px;
@@ -103,35 +130,52 @@ nav {
   box-shadow:0 0 15px #00f3ff70,0 0 35px #00f3ff30;
   animation:flotar 5s ease-in-out infinite;
 }
+
 .logo-arco {
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
+  pointer-events:none;
 }
+
 .logo-arco text {
   fill:var(--cyan);
   font-size:13px;
   font-weight:900;
   letter-spacing:.8px;
 }
+
 .logo-interior {
   position:relative;
   text-align:center;
   padding-top:20px;
 }
+
 .logo-interior h1 {
-  font-size:35px;
+  font-size:31px;
   color:var(--amarillo);
-  margin:0 0 10px;
+  margin:0 0 9px;
   text-shadow:0 0 15px gold;
 }
+
+.logo-interior h2 {
+  font-size:16px;
+  line-height:1.05;
+  letter-spacing:.8px;
+  color:var(--amarillo);
+  margin:-5px 0 10px;
+  font-weight:900;
+  text-shadow:0 0 12px gold;
+}
+
 .logo-interior p {
   font:27px/1.25 Pacifico,cursive;
   color:var(--rosa);
   margin:0;
   text-shadow:0 0 12px var(--rosa);
 }
+
 .logo-interior strong {
   display:block;
   margin-top:13px;
@@ -139,9 +183,11 @@ nav {
   font-size:13px;
   text-shadow:0 0 10px var(--verde);
 }
+
 @keyframes flotar {
   50% {transform:translateY(-8px)}
 }
+
 .hero-descripcion {
   max-width:680px;
   margin:25px auto;
@@ -149,6 +195,7 @@ nav {
   font-size:14px;
   line-height:1.9;
 }
+
 .hero-botones {
   display:flex;
   gap:10px;
@@ -156,18 +203,21 @@ nav {
   flex-wrap:wrap;
 }
 
-/* TEXTO EN MOVIMIENTO */
+/* FRASES EN MOVIMIENTO */
+
 .ticker {
   overflow:hidden;
   padding:13px 0;
   background:linear-gradient(90deg,#111a36,#35123c,#111a36);
   border-block:1px solid #ff47b655;
 }
+
 .ticker-track {
   display:flex;
   width:max-content;
   animation:marquee 26s linear infinite;
 }
+
 .ticker-text {
   flex-shrink:0;
   white-space:nowrap;
@@ -176,35 +226,45 @@ nav {
   color:var(--amarillo);
   padding-right:45px;
 }
-.ticker-text span {color:var(--cyan);margin:0 25px}
+
+.ticker-text span {
+  color:var(--cyan);
+  margin:0 25px;
+}
+
 @keyframes marquee {
   to {transform:translateX(-50%)}
 }
 
 /* SECCIONES */
+
 .container {
   max-width:1200px;
   margin:auto;
   padding:45px 18px;
 }
+
 .section-title {
   font-size:27px;
   font-weight:900;
   margin:8px 0 25px;
 }
+
 .tag {
   font-size:11px;
   color:var(--rosa);
   font-weight:900;
 }
 
-/* BANNER DE OFERTAS */
+/* BANNER AUTOMÁTICO */
+
 .promo-slider {
   position:relative;
   overflow:hidden;
   border-radius:18px;
   background:linear-gradient(110deg,#5012ba,#b02091);
 }
+
 .promo-slide {
   display:none;
   min-height:330px;
@@ -213,19 +273,32 @@ nav {
   justify-content:space-between;
   gap:30px;
 }
-.promo-slide.active {display:flex}
+
+.promo-slide.active {
+  display:flex;
+  animation:entradaBanner .6s ease;
+}
+
+@keyframes entradaBanner {
+  from {opacity:0;transform:translateX(35px)}
+  to {opacity:1;transform:translateX(0)}
+}
+
 .promo-text {flex:1;min-width:0}
+
 .promo-text h2 {
   font-size:clamp(24px,4vw,43px);
   color:var(--amarillo);
   font-weight:900;
   overflow-wrap:anywhere;
 }
+
 .promo-price {
   font-size:30px;
   font-weight:900;
   margin:18px 0;
 }
+
 .promo-photo {
   width:43%;
   height:255px;
@@ -233,6 +306,7 @@ nav {
   background:white;
   border-radius:14px;
 }
+
 .promo-arrow {
   position:absolute;
   top:50%;
@@ -246,15 +320,18 @@ nav {
   border:1px solid #ffffff66;
   font-size:25px;
 }
+
 .promo-prev {left:12px}
 .promo-next {right:12px}
 
-/* PRODUCTOS Y PUBLICACIONES */
+/* PRODUCTOS */
+
 .product-grid {
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(255px,1fr));
   gap:22px;
 }
+
 .card {
   background:var(--tarjeta);
   border:1px solid #ffffff22;
@@ -263,30 +340,50 @@ nav {
   display:flex;
   flex-direction:column;
 }
+
 .card:hover {
   border-color:var(--cyan);
   box-shadow:0 12px 30px #00f3ff22;
 }
+
 .card-image {
   width:100%;
   height:310px;
   background:white;
   object-fit:contain;
   cursor:pointer;
+  transition:transform .3s;
 }
+
+.card:hover .card-image {
+  transform:scale(1.04);
+}
+
 .card-body {padding:18px;flex:1}
-.card h3 {font-size:17px;font-weight:900}
-.card p {font-size:12px;color:#bac5d8;line-height:1.7}
+
+.card h3 {
+  font-size:17px;
+  font-weight:900;
+}
+
+.card p {
+  font-size:12px;
+  color:#bac5d8;
+  line-height:1.7;
+}
+
 .card-footer {
   padding:16px;
   border-top:1px solid #ffffff20;
 }
+
 .price {
   font-size:23px;
   font-weight:900;
   color:var(--amarillo);
   margin-bottom:14px;
 }
+
 .filter {
   background:#1b263b;
   color:white;
@@ -295,11 +392,13 @@ nav {
   padding:11px 16px;
   font-size:12px;
 }
+
 .filter.active {
   background:var(--cyan);
   color:#061522;
   font-weight:900;
 }
+
 .field {
   width:100%;
   padding:12px;
@@ -308,6 +407,7 @@ nav {
   border-radius:9px;
   color:white;
 }
+
 .admin-tools {
   display:flex;
   gap:8px;
@@ -315,32 +415,41 @@ nav {
 }
 
 /* REDES SOCIALES */
+
 .redes-grid {
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
+
 .red-card {
   padding:26px;
   background:#10192e;
   border:1px solid #ffffff25;
   border-radius:17px;
+  display:flex;
+  flex-direction:column;
 }
+
 .red-card p {
   font-size:12px;
   line-height:1.8;
   color:#bac5d8;
+  flex:1;
 }
 
-/* FICHA DE PRODUCTO */
+/* DETALLE PRODUCTO */
+
 #detailPage {display:none}
 #detailPage.visible {display:block}
 #mainStore.hidden-store {display:none}
+
 .detail-layout {
   display:grid;
   grid-template-columns:1.2fr 1fr;
   gap:25px;
 }
+
 .detail-photo {
   width:100%;
   height:430px;
@@ -349,6 +458,7 @@ nav {
   border-radius:16px;
   cursor:zoom-in;
 }
+
 .thumb {
   width:75px;
   height:75px;
@@ -360,12 +470,14 @@ nav {
 }
 
 /* ADMINISTRACIÓN */
+
 #adminbar {
   display:none;
   padding:12px;
   text-align:center;
   background:#28113b;
 }
+
 .modal {
   position:fixed;
   inset:0;
@@ -376,7 +488,9 @@ nav {
   padding:15px;
   background:#000d;
 }
+
 .modal.open {display:flex}
+
 .modal-content {
   width:100%;
   max-width:510px;
@@ -387,12 +501,15 @@ nav {
   border-radius:18px;
   padding:24px;
 }
+
 .form-group {margin-bottom:15px}
+
 .form-group label {
   display:block;
   font-size:12px;
   margin-bottom:7px;
 }
+
 #toast {
   position:fixed;
   bottom:25px;
@@ -406,6 +523,7 @@ nav {
   border-radius:12px;
   text-align:center;
 }
+
 #imageZoom {
   position:fixed;
   inset:0;
@@ -416,12 +534,15 @@ nav {
   background:#000e;
   padding:25px;
 }
+
 #imageZoom.open {display:flex}
+
 #imageZoom img {
   max-width:95vw;
   max-height:88vh;
   object-fit:contain;
 }
+
 footer {
   background:#050914;
   text-align:center;
@@ -429,8 +550,19 @@ footer {
   color:#94a3b8;
   font-size:12px;
 }
+
+.admin-footer {
+  background:none;
+  border:0;
+  color:#64748b;
+  font-size:11px;
+}
+
+.admin-footer:hover {color:var(--cyan)}
+
 @media(max-width:700px) {
   nav {justify-content:center}
+  .nav-links {justify-content:center;flex-wrap:wrap}
   .logo-julieta {width:235px;height:235px}
   .promo-slide {
     flex-direction:column-reverse;
@@ -441,6 +573,7 @@ footer {
   .detail-layout,.redes-grid {grid-template-columns:1fr}
   .detail-photo {height:290px}
 }
+
 @media(prefers-reduced-motion:reduce) {
   *,*::before,*::after {
     animation:none!important;
@@ -452,7 +585,8 @@ footer {
 
 <body>
 
-<!-- ADMINISTRADOR -->
+<!-- PANEL ADMINISTRADOR -->
+
 <div id="adminbar">
   <strong>PANEL ADMINISTRADOR</strong>
   <button class="btn green" onclick="openProduct('catalogo')">+ Nuevo Producto</button>
@@ -462,12 +596,16 @@ footer {
 </div>
 
 <!-- ENCABEZADO -->
+
 <header>
 <nav>
   <a href="#" class="brand" onclick="backToCatalog()">
-    JULIETA!
-    <span class="script" style="font-size:12px">Venta a Domicilio</span>
+    JULIETA DISTRIBUIDORA
+    <span class="script" style="font-size:12px">
+      Venta a Domicilio
+    </span>
   </a>
+
   <div class="nav-links">
     <a href="#banner" onclick="backToCatalog()">Ofertas</a>
     <a href="#publicaciones" onclick="backToCatalog()">Publicaciones</a>
@@ -479,275 +617,416 @@ footer {
 
 <main id="mainStore">
 
-<!-- LOGO SIN IMAGEN EXTERNA -->
+<!-- LOGO INTEGRADO SIN IMAGEN EXTERNA -->
+
 <section class="hero">
+
   <div class="logo-julieta">
+
     <svg class="logo-arco" viewBox="0 0 300 300" aria-hidden="true">
       <defs>
-        <path id="arcoJulieta" d="M28,150 A122,122 0 0,1 272,150"/>
+        <path id="arcoJulieta"
+          d="M28,150 A122,122 0 0,1 272,150"/>
       </defs>
+
       <text>
-        <textPath href="#arcoJulieta" startOffset="50%" text-anchor="middle">
+        <textPath href="#arcoJulieta"
+          startOffset="50%" text-anchor="middle">
           ELECTRÓNICA • HOGAR • MÁS
         </textPath>
       </text>
     </svg>
+
     <div class="logo-interior">
-      <h1>JULIETA!</h1>
+      <h1>JULIETA</h1>
+      <h2>DISTRIBUIDORA</h2>
       <p>Venta a<br>Domicilio</p>
       <strong>2617 04-0339</strong>
     </div>
+
   </div>
 
   <p class="hero-descripcion">
-    Todo lo que buscás en electrónica, bazar, artículos para el hogar,
-    accesorios y novedades en un solo lugar.
+    Todo lo que buscás en electrónica, bazar,
+    artículos para el hogar, accesorios y novedades
+    en un solo lugar.
   </p>
 
   <div class="hero-botones">
-    <a href="#catalogo" class="btn cyan">🛍 VER CATÁLOGO</a>
-    <a href="https://wa.me/5492617040339" target="_blank" rel="noopener noreferrer" class="btn green">💬 WHATSAPP</a>
-    <a href="https://www.instagram.com/julii.40822676/" target="_blank" rel="noopener noreferrer" class="btn instagram">📸 INSTAGRAM</a>
-    <a href="https://www.tiktok.com/@alu4082" target="_blank" rel="noopener noreferrer" class="btn tiktok">♪ TIKTOK</a>
+
+    <a href="#catalogo" class="btn cyan">
+      🛍 VER CATÁLOGO
+    </a>
+
+    <a href="https://wa.me/5492617040339"
+      target="_blank" rel="noopener noreferrer"
+      class="btn green">
+      💬 WHATSAPP
+    </a>
+
+    <a href="https://www.instagram.com/julii.40822676/"
+      target="_blank" rel="noopener noreferrer"
+      class="btn instagram">
+      📸 INSTAGRAM
+    </a>
+
+    <a href="https://www.tiktok.com/@alu4082"
+      target="_blank" rel="noopener noreferrer"
+      class="btn tiktok">
+      ♪ TIKTOK
+    </a>
+
   </div>
+
 </section>
 
 <!-- FRASES EN MOVIMIENTO -->
+
 <div class="ticker">
   <div class="ticker-track">
+
     <div class="ticker-text">
       ✨ NUEVOS INGRESOS
-      <span>💖 JULIETA! VENTA A DOMICILIO</span>
+      <span>💖 JULIETA DISTRIBUIDORA</span>
       🔥 OFERTAS Y NOVEDADES
       <span>📦 CONSULTÁ DISPONIBILIDAD</span>
     </div>
+
     <div class="ticker-text" aria-hidden="true">
       ✨ NUEVOS INGRESOS
-      <span>💖 JULIETA! VENTA A DOMICILIO</span>
+      <span>💖 JULIETA DISTRIBUIDORA</span>
       🔥 OFERTAS Y NOVEDADES
       <span>📦 CONSULTÁ DISPONIBILIDAD</span>
     </div>
+
   </div>
 </div>
 
 <!-- BANNER DE OFERTAS -->
+
 <section id="banner" class="container" style="display:none">
+
   <div class="promo-slider">
-    <button class="promo-arrow promo-prev" onclick="changePromo(-1)">&#10094;</button>
+
+    <button class="promo-arrow promo-prev"
+      onclick="changePromo(-1)" aria-label="Anterior">
+      &#10094;
+    </button>
+
     <div id="promoSlides"></div>
-    <button class="promo-arrow promo-next" onclick="changePromo(1)">&#10095;</button>
+
+    <button class="promo-arrow promo-next"
+      onclick="changePromo(1)" aria-label="Siguiente">
+      &#10095;
+    </button>
+
   </div>
+
 </section>
 
-<!-- PUBLICACIONES SEPARADAS DEL BANNER -->
+<!-- PUBLICACIONES -->
+
 <section id="publicaciones" class="container" style="display:none">
+
   <span class="tag">NOTICIAS • FLYERS • PROMOCIONES</span>
-  <h2 class="section-title">✨ Publicaciones y Novedades</h2>
+
+  <h2 class="section-title">
+    ✨ Publicaciones y Novedades
+  </h2>
+
   <div id="publicationsGrid" class="product-grid"></div>
+
 </section>
 
 <!-- CATÁLOGO -->
+
 <section id="catalogo" class="container">
+
   <span class="tag">TODOS LOS ARTÍCULOS</span>
   <h2 class="section-title">Catálogo Completo</h2>
 
   <input id="search" class="field"
-         style="max-width:350px"
-         placeholder="Buscar productos...">
+    style="max-width:350px"
+    placeholder="Buscar productos...">
 
-  <div id="filters" style="display:flex;gap:9px;flex-wrap:wrap;margin:25px 0">
+  <div id="filters"
+    style="display:flex;gap:9px;flex-wrap:wrap;margin:25px 0">
+
     <button class="filter active" data-cat="Todos">Todos</button>
     <button class="filter" data-cat="Electrónica">Electrónica y Audio</button>
     <button class="filter" data-cat="Hogar y Bazar">Hogar y Bazar</button>
     <button class="filter" data-cat="Iluminación">Iluminación LED</button>
     <button class="filter" data-cat="Accesorios y Varios">Accesorios y Varios</button>
+
   </div>
 
   <div id="productsGrid" class="product-grid"></div>
-  <p id="empty" style="display:none;text-align:center">No se encontraron productos.</p>
+
+  <p id="empty" style="display:none;text-align:center">
+    No se encontraron productos.
+  </p>
+
 </section>
 
-<!-- REDES -->
+<!-- REDES SOCIALES -->
+
 <section id="canales" class="container">
+
   <span class="tag">ENTERATE PRIMERO</span>
-  <h2 class="section-title">Canales de Difusión y Redes</h2>
+
+  <h2 class="section-title">
+    Canales de Difusión y Redes
+  </h2>
+
+  <p style="color:#94a3b8;font-size:13px;margin-bottom:25px">
+    Ingresos nuevos, ofertas y demostraciones de nuestros productos.
+  </p>
 
   <div class="redes-grid">
-    <article class="red-card">
-      <h3>💬 WhatsApp</h3>
-      <p>Agendá nuestro número para recibir promociones, ofertas y novedades.</p>
+
+    <article class="red-card" style="border-color:#14532d">
+      <h3 style="color:#39ff14">💬 WhatsApp Oficial</h3>
+      <p>
+        Agendá nuestro número 2617 04-0339 para recibir
+        promociones, ofertas y novedades.
+      </p>
       <a class="btn green"
-         href="https://wa.me/5492617040339"
-         target="_blank" rel="noopener noreferrer">Sumarme a Difusión</a>
+        href="https://wa.me/5492617040339?text=Hola%20Julieta!%20Quiero%20sumarme%20a%20la%20difusi%C3%B3n"
+        target="_blank" rel="noopener noreferrer">
+        Pedir Alta en Difusión
+      </a>
     </article>
 
-    <article class="red-card">
-      <h3>♪ TikTok Oficial</h3>
-      <p>Mirá nuestros videos, demostraciones y nuevos productos.</p>
+    <article class="red-card" style="border-color:#702868">
+      <h3 style="color:#ff47b6">♪ TikTok Oficial</h3>
+      <p>
+        Mirá nuestros videos, demostraciones y nuevos productos.
+        Seguinos para conocer las novedades.
+      </p>
       <a class="btn tiktok"
-         href="https://www.tiktok.com/@alu4082"
-         target="_blank" rel="noopener noreferrer">Seguir @alu4082</a>
+        href="https://www.tiktok.com/@alu4082"
+        target="_blank" rel="noopener noreferrer">
+        Seguir @alu4082
+      </a>
     </article>
 
-    <article class="red-card">
-      <h3>📸 Instagram Oficial</h3>
-      <p>Encontrá fotos, promociones y todas las novedades de JULIETA!</p>
+    <article class="red-card" style="border-color:#a82d77">
+      <h3 style="color:#ff66c4">📸 Instagram Oficial</h3>
+      <p>
+        Encontrá fotos, promociones y todas las novedades
+        de JULIETA DISTRIBUIDORA.
+      </p>
       <a class="btn instagram"
-         href="https://www.instagram.com/julii.40822676/"
-         target="_blank" rel="noopener noreferrer">Seguir en Instagram</a>
+        href="https://www.instagram.com/julii.40822676/"
+        target="_blank" rel="noopener noreferrer">
+        Seguir en Instagram
+      </a>
     </article>
+
   </div>
+
 </section>
+
 </main>
 
-<!-- DETALLE DEL PRODUCTO -->
+<!-- FICHA INDIVIDUAL DEL PRODUCTO -->
+
 <section id="detailPage">
-<div class="container">
-  <button class="btn dark" onclick="backToCatalog()">← VOLVER AL CATÁLOGO</button>
+  <div class="container">
 
-  <div class="detail-layout" style="margin-top:25px">
-    <div>
-      <img id="detailImage" class="detail-photo"
-           alt="Fotografía del producto" onclick="zoomImage()">
-      <div id="detailThumbnails" style="margin-top:15px"></div>
-    </div>
+    <button class="btn dark" onclick="backToCatalog()">
+      ← VOLVER AL CATÁLOGO
+    </button>
 
-    <div>
-      <span id="detailCategory" class="tag"></span>
-      <h1 id="detailName"></h1>
-      <div id="detailPrice" class="price"></div>
-      <h3>Características y descripción</h3>
-      <p id="detailDescription" style="white-space:pre-line;line-height:1.9;color:#cbd5e1"></p>
-      <a id="detailWhatsapp" class="btn green"
-         target="_blank" rel="noopener noreferrer">
-        💬 CONSULTAR POR WHATSAPP
-      </a>
+    <div class="detail-layout" style="margin-top:25px">
+
+      <div>
+        <img id="detailImage" class="detail-photo"
+          alt="Fotografía del producto" onclick="zoomImage()">
+
+        <div id="detailThumbnails" style="margin-top:15px"></div>
+      </div>
+
+      <div>
+        <span id="detailCategory" class="tag"></span>
+        <h1 id="detailName"></h1>
+        <div id="detailPrice" class="price"></div>
+
+        <h3>Características y descripción</h3>
+
+        <p id="detailDescription"
+          style="white-space:pre-line;line-height:1.9;color:#cbd5e1">
+        </p>
+
+        <a id="detailWhatsapp" class="btn green"
+          target="_blank" rel="noopener noreferrer">
+          💬 CONSULTAR POR WHATSAPP
+        </a>
+      </div>
+
     </div>
   </div>
-</div>
 </section>
 
 <!-- PIE DE PÁGINA -->
+
 <footer>
-  <strong class="brand">JULIETA!</strong>
+  <strong class="brand">JULIETA DISTRIBUIDORA</strong>
   <p class="script">Venta a Domicilio</p>
   <p>Electrónica • Hogar • Bazar • Accesorios</p>
   <p>WhatsApp: 2617 04-0339</p>
-  <button class="btn dark" style="margin-top:20px"
-          onclick="openLogin()">Administración</button>
+
+  <button class="admin-footer" style="margin-top:20px"
+    onclick="openLogin()">
+    Administración
+  </button>
 </footer>
 
-<!-- FOTO AMPLIADA -->
+<!-- IMAGEN AMPLIADA -->
+
 <div id="imageZoom" onclick="closeZoom()">
   <img id="zoomedImage" alt="Imagen ampliada">
 </div>
 
-<!-- INICIO DE SESIÓN -->
+<!-- LOGIN -->
+
 <div id="loginModal" class="modal">
-<div class="modal-content">
-  <h2>🔒 Acceso Administrador</h2>
-  <form id="loginForm">
-    <div class="form-group">
-      <label>Correo electrónico</label>
-      <input id="adminEmail" type="email" class="field" required>
-    </div>
-    <div class="form-group">
-      <label>Contraseña</label>
-      <input id="adminPassword" type="password" class="field" required>
-    </div>
-    <button class="btn cyan" type="submit">Ingresar</button>
-    <button class="btn dark" type="button" onclick="closeLogin()">Cancelar</button>
-  </form>
-</div>
+  <div class="modal-content">
+
+    <h2>🔒 Acceso Administrador</h2>
+
+    <form id="loginForm">
+
+      <div class="form-group">
+        <label>Correo electrónico</label>
+        <input id="adminEmail" type="email" class="field" required>
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input id="adminPassword" type="password" class="field" required>
+      </div>
+
+      <button class="btn cyan" type="submit">Ingresar</button>
+
+      <button class="btn dark" type="button" onclick="closeLogin()">
+        Cancelar
+      </button>
+
+    </form>
+
+  </div>
 </div>
 
-<!-- EDITOR DE PRODUCTOS -->
+<!-- ADMINISTRAR PUBLICACIONES -->
+
 <div id="productModal" class="modal">
-<div class="modal-content">
-  <h2 id="modalTitle">Nueva Publicación</h2>
-  <form id="productForm">
-    <input id="prodId" type="hidden">
+  <div class="modal-content">
 
-    <div class="form-group">
-      <label>¿Dónde querés publicar?</label>
-      <select id="prodPlacement" class="field">
-        <option value="banner">Banner principal (imágenes en movimiento)</option>
-        <option value="publicacion">Publicaciones y Novedades</option>
-        <option value="catalogo">Catálogo Completo</option>
-      </select>
-    </div>
+    <h2 id="modalTitle">Nueva Publicación</h2>
 
-    <div class="form-group">
-      <label>Nombre del producto *</label>
-      <input id="prodName" class="field" required>
-    </div>
+    <form id="productForm">
 
-    <div class="form-group">
-      <label>Categoría</label>
-      <select id="prodCategory" class="field">
-        <option value="Electrónica">Electrónica y Audio</option>
-        <option value="Hogar y Bazar">Hogar y Bazar</option>
-        <option value="Iluminación">Iluminación LED</option>
-        <option value="Accesorios y Varios">Accesorios y Varios</option>
-      </select>
-    </div>
+      <input id="prodId" type="hidden">
 
-    <div class="form-group">
-      <label>Precio o promoción</label>
-      <input id="prodPrice" class="field">
-    </div>
+      <div class="form-group">
+        <label>¿Dónde querés publicar?</label>
 
-    <div class="form-group">
-      <label>Descripción *</label>
-      <textarea id="prodDesc" class="field" rows="4" required></textarea>
-    </div>
+        <select id="prodPlacement" class="field">
+          <option value="banner">Banner principal</option>
+          <option value="publicacion">Publicaciones y Novedades</option>
+          <option value="catalogo">Catálogo Completo</option>
+        </select>
+      </div>
 
-    <div class="form-group">
-      <label>Imagen principal</label>
-      <input id="prodImage" class="field"
-             placeholder="img/combo.jpeg">
-    </div>
+      <div class="form-group">
+        <label>Nombre del producto *</label>
+        <input id="prodName" class="field" required>
+      </div>
 
-    <div class="form-group">
-      <label>Imágenes adicionales (una por línea)</label>
-      <textarea id="prodImages" class="field" rows="3"
-                placeholder="img/combo2.jpeg"></textarea>
-    </div>
+      <div class="form-group">
+        <label>Categoría</label>
 
-    <div class="form-group">
-      <label>
-        <input id="prodActive" type="checkbox" checked>
-        Visible al público
-      </label>
-    </div>
+        <select id="prodCategory" class="field">
+          <option value="Electrónica">Electrónica y Audio</option>
+          <option value="Hogar y Bazar">Hogar y Bazar</option>
+          <option value="Iluminación">Iluminación LED</option>
+          <option value="Accesorios y Varios">Accesorios y Varios</option>
+        </select>
+      </div>
 
-    <button id="saveButton" class="btn green" type="submit">
-      Guardar Publicación
-    </button>
-    <button class="btn dark" type="button"
-            onclick="closeProduct()">Cancelar</button>
-  </form>
-</div>
+      <div class="form-group">
+        <label>Precio o promoción</label>
+        <input id="prodPrice" class="field">
+      </div>
+
+      <div class="form-group">
+        <label>Descripción *</label>
+        <textarea id="prodDesc" class="field" rows="4" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Fotografía principal</label>
+        <input id="prodImage" class="field"
+          placeholder="img/104.png">
+      </div>
+
+      <div class="form-group">
+        <label>Fotografías adicionales (una por línea)</label>
+        <textarea id="prodImages" class="field" rows="3"
+          placeholder="img/combo2.jpeg"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <input id="prodActive" type="checkbox" checked>
+          Visible al público
+        </label>
+      </div>
+
+      <button id="saveButton" class="btn green" type="submit">
+        Guardar Publicación
+      </button>
+
+      <button class="btn dark" type="button"
+        onclick="closeProduct()">
+        Cancelar
+      </button>
+
+    </form>
+  </div>
 </div>
 
 <div id="toast" role="status" aria-live="polite"></div>
 
 <!-- FIREBASE Y FUNCIONES -->
+
 <script type="module">
-import {initializeApp} from
-"https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+
+import {initializeApp}
+from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
 
 import {
-  getAuth,signInWithEmailAndPassword,
-  onAuthStateChanged,signOut
+  getAuth,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut
 } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 
 import {
-  getFirestore,collection,addDoc,updateDoc,
-  deleteDoc,doc,onSnapshot,serverTimestamp
+  getFirestore,
+  collection,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+  onSnapshot,
+  serverTimestamp
 } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-const firebaseConfig={
+/* CONFIGURACIÓN FIREBASE */
+
+const firebaseConfig = {
   apiKey:"AIzaSyCrJuwzE3AGiOKlXaRzdVbjze5aWnKJi-Q",
   authDomain:"julietadistribuidora-ae348.firebaseapp.com",
   projectId:"julietadistribuidora-ae348",
@@ -756,360 +1035,622 @@ const firebaseConfig={
   appId:"1:787179156370:web:7bc068f8d539b032a874b"
 };
 
-const app=initializeApp(firebaseConfig);
-const auth=getAuth(app);
-const db=getFirestore(app);
-const productsCol=collection(
-  db,"artifacts","julieta-venta-domicilio","public","data","products"
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+const productsCol = collection(
+  db,
+  "artifacts",
+  "julieta-venta-domicilio",
+  "public",
+  "data",
+  "products"
 );
 
-const $=id=>document.getElementById(id);
-let products=[];
-let admin=false;
-let category="Todos";
-let currentDetail=null;
-let promoItems=[];
-let promoIndex=0;
+const $ = id => document.getElementById(id);
 
-function escapeHtml(v){
-  return String(v??"").replace(/[&<>"']/g,c=>({
-    "&":"&amp;","<":"&lt;",">":"&gt;",
-    '"':"&quot;","'":"&#39;"
+let products = [];
+let admin = false;
+let category = "Todos";
+let currentDetail = null;
+let promoItems = [];
+let promoIndex = 0;
+let toastTimer = null;
+
+/* UTILIDADES */
+
+function escapeHtml(v) {
+  return String(v ?? "").replace(/[&<>"']/g,c=>({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
   })[c]);
 }
 
-function safeUrl(v){
-  const s=String(v||"").trim();
-  if(/^https?:\/\/[^\s]+$/i.test(s))return s;
-  if(
-    /^img\/[a-zA-Z0-9 _./()-]+\.(jpg|jpeg|png|webp|gif)$/i.test(s)
-    && !s.split("/").includes("..")
-  )return s;
+/* CORRECCIÓN DE IMÁGENES GITHUB */
+
+function safeUrl(value) {
+
+  const url = String(value || "").trim();
+
+  // Mantener enlaces públicos completos
+  if (/^https?:\/\/[^\s]+$/i.test(url)) {
+    return url;
+  }
+
+  // Rutas de la carpeta img
+  if (
+    /^img\/[a-zA-Z0-9 _./()-]+\.(jpg|jpeg|png|webp|gif)$/i.test(url)
+    && !url.split("/").includes("..")
+  ) {
+
+    const ruta = url.split("/")
+      .map(parte=>encodeURIComponent(parte))
+      .join("/");
+
+    // GitHub Pages: obtener imágenes del repositorio
+    if (window.location.hostname.endsWith("github.io")) {
+
+      return "https://raw.githubusercontent.com/" +
+        "animarzana1996-hash/" +
+        "julietadistribuidora/main/" +
+        ruta;
+    }
+
+    // En Visual Studio Code: usar ruta local
+    return ruta;
+  }
+
   return "";
 }
 
-function getImages(p){
-  const extra=Array.isArray(p.images)?p.images:
-    typeof p.images==="string"?p.images.split("\n"):[];
-  return [...new Set([p.image,...extra].map(safeUrl).filter(Boolean))];
+function getImages(p) {
+
+  const extra = Array.isArray(p.images)
+    ? p.images
+    : typeof p.images === "string"
+      ? p.images.split("\n")
+      : [];
+
+  return [...new Set(
+    [p.image,...extra]
+      .map(safeUrl)
+      .filter(Boolean)
+  )];
 }
 
-function placement(p){
-  if(["banner","publicacion","catalogo"].includes(p.placement))
+function placement(p) {
+
+  if (["banner","publicacion","catalogo"].includes(p.placement)) {
     return p.placement;
-  if(p.featured===true)return "banner";
+  }
+
+  if (p.featured === true) return "banner";
+
   return "catalogo";
 }
 
-function visibleProducts(){
-  return products.filter(p=>admin||p.active!==false);
+function visibleProducts() {
+  return products.filter(p=>admin || p.active !== false);
 }
 
-function toast(message){
-  $("toast").textContent=message;
-  $("toast").style.display="block";
-  setTimeout(()=>$("toast").style.display="none",3500);
+function toast(message) {
+
+  $("toast").textContent = message;
+  $("toast").style.display = "block";
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(()=>{
+    $("toast").style.display = "none";
+  },3500);
 }
 
-function card(p){
-  const pic=getImages(p)[0]||"";
-  const id=escapeHtml(p.id);
+/* TARJETAS */
+
+function card(p) {
+
+  const pic = getImages(p)[0] || "";
+  const id = escapeHtml(p.id);
+
   return `
     <article class="card">
-      ${pic?`<img class="card-image"
-        src="${escapeHtml(pic)}"
-        alt="${escapeHtml(p.name)}"
-        loading="lazy" data-view="${id}">`:""}
+
+      ${pic ? `
+        <img class="card-image"
+          src="${escapeHtml(pic)}"
+          alt="${escapeHtml(p.name)}"
+          loading="lazy"
+          data-view="${id}">
+      ` : `
+        <div style="height:310px;background:white;color:#64748b">
+          Sin fotografía
+        </div>
+      `}
+
       <div class="card-body">
+
         <span class="tag">${escapeHtml(p.category)}</span>
+
         <h3>${escapeHtml(p.name)}</h3>
+
         <p>${escapeHtml((p.description||"").slice(0,150))}</p>
-        ${admin?`
+
+        ${admin ? `
           <div class="admin-tools">
             <button class="btn dark" data-edit="${id}">Editar</button>
             <button class="btn pink" data-delete="${id}">Eliminar</button>
-          </div>`:""}
+          </div>
+        ` : ""}
+
       </div>
+
       <div class="card-footer">
-        <div class="price">${escapeHtml(p.price||"Consultar")}</div>
-        <button class="btn cyan" data-view="${id}">
+
+        <div class="price">
+          ${escapeHtml(p.price||"Consultar")}
+        </div>
+
+        <button class="btn cyan" data-view="${id}"
+          style="width:100%">
           👁 VER PRODUCTO
         </button>
+
       </div>
-    </article>`;
+
+    </article>
+  `;
 }
 
-function renderAll(){
+/* ACTUALIZAR PÁGINA */
+
+function renderAll() {
   renderBanner();
   renderPublications();
   renderCatalog();
 }
 
-function renderBanner(){
-  const oldId=promoItems[promoIndex]?.id;
-  promoItems=visibleProducts().filter(p=>
-    placement(p)==="banner"&&getImages(p).length
-  );
-  $("banner").style.display=promoItems.length?"block":"none";
-  const oldIndex=promoItems.findIndex(p=>p.id===oldId);
-  promoIndex=oldIndex>=0?oldIndex:0;
+/* BANNER AUTOMÁTICO */
 
-  $("promoSlides").innerHTML=promoItems.map((p,i)=>`
+function renderBanner() {
+
+  const oldId = promoItems[promoIndex]?.id;
+
+  promoItems = visibleProducts().filter(p=>
+    placement(p)==="banner" && getImages(p).length
+  );
+
+  $("banner").style.display =
+    promoItems.length ? "block" : "none";
+
+  const oldIndex = promoItems.findIndex(p=>p.id===oldId);
+  promoIndex = oldIndex>=0 ? oldIndex : 0;
+
+  $("promoSlides").innerHTML = promoItems.map((p,i)=>`
+
     <div class="promo-slide ${i===promoIndex?"active":""}">
+
       <div class="promo-text">
+
         <small>✨ OFERTA DESTACADA</small>
+
         <h2>${escapeHtml(p.name)}</h2>
+
         <div class="promo-price">
           ${escapeHtml(p.price||"Consultar")}
         </div>
+
         <button class="btn cyan" data-view="${escapeHtml(p.id)}">
           👁 VER PRODUCTO
         </button>
-        ${admin?`<button class="btn dark"
-          data-edit="${escapeHtml(p.id)}">Editar</button>`:""}
+
+        ${admin ? `
+          <button class="btn dark"
+            data-edit="${escapeHtml(p.id)}">
+            Editar
+          </button>
+        ` : ""}
+
       </div>
+
       <img class="promo-photo"
         src="${escapeHtml(getImages(p)[0])}"
         alt="${escapeHtml(p.name)}">
-    </div>`).join("");
+
+    </div>
+
+  `).join("");
 }
 
-window.changePromo=n=>{
-  if(!promoItems.length)return;
-  promoIndex=(promoIndex+n+promoItems.length)%promoItems.length;
+window.changePromo = n => {
+
+  if (!promoItems.length) return;
+
+  promoIndex =
+    (promoIndex+n+promoItems.length)%promoItems.length;
+
   document.querySelectorAll(".promo-slide").forEach((s,i)=>
     s.classList.toggle("active",i===promoIndex)
   );
 };
 
 setInterval(()=>{
-  if(!document.hidden&&promoItems.length>1)
+
+  if (!document.hidden && promoItems.length>1 &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     changePromo(1);
+  }
+
 },5000);
 
-function renderPublications(){
-  const pubs=visibleProducts().filter(p=>
+/* PUBLICACIONES */
+
+function renderPublications() {
+
+  const pubs = visibleProducts().filter(p=>
     placement(p)==="publicacion"
   );
-  $("publicaciones").style.display=pubs.length?"block":"none";
-  $("publicationsGrid").innerHTML=pubs.map(card).join("");
+
+  $("publicaciones").style.display =
+    pubs.length ? "block" : "none";
+
+  $("publicationsGrid").innerHTML =
+    pubs.map(card).join("");
 }
 
-function renderCatalog(){
-  const query=$("search").value.toLowerCase().trim();
-  const items=visibleProducts()
+/* CATÁLOGO */
+
+function renderCatalog() {
+
+  const query = $("search").value.toLowerCase().trim();
+
+  const items = visibleProducts()
     .filter(p=>placement(p)==="catalogo")
     .filter(p=>
-      (category==="Todos"||p.category===category)&&
+      (category==="Todos" || p.category===category) &&
       ((p.name||"")+" "+(p.description||""))
         .toLowerCase().includes(query)
     );
-  $("productsGrid").innerHTML=items.map(card).join("");
-  $("empty").style.display=items.length?"none":"block";
+
+  $("productsGrid").innerHTML =
+    items.map(card).join("");
+
+  $("empty").style.display =
+    items.length ? "none" : "block";
 }
 
 $("search").addEventListener("input",renderCatalog);
 
 $("filters").addEventListener("click",e=>{
-  const btn=e.target.closest("[data-cat]");
-  if(!btn)return;
-  category=btn.dataset.cat;
+
+  const btn = e.target.closest("[data-cat]");
+  if (!btn) return;
+
+  category = btn.dataset.cat;
+
   document.querySelectorAll(".filter").forEach(b=>
     b.classList.remove("active")
   );
+
   btn.classList.add("active");
+
   renderCatalog();
 });
 
+/* AUTENTICACIÓN */
+
 onAuthStateChanged(auth,user=>{
-  admin=!!user&&!user.isAnonymous;
-  $("adminbar").style.display=admin?"block":"none";
+
+  admin = !!user && !user.isAnonymous;
+
+  $("adminbar").style.display =
+    admin ? "block" : "none";
+
   renderAll();
 });
+
+/* CARGAR PRODUCTOS FIREBASE */
 
 onSnapshot(productsCol,snapshot=>{
-  products=snapshot.docs.map(d=>({id:d.id,...d.data()}));
+
+  products = snapshot.docs.map(d=>({
+    id:d.id,
+    ...d.data()
+  }));
+
   products.sort((a,b)=>
-    (b.createdAt?.seconds||0)-(a.createdAt?.seconds||0)
+    (b.createdAt?.seconds||0)-
+    (a.createdAt?.seconds||0)
   );
+
   renderAll();
+
 },error=>{
+
   console.error(error);
   toast("No se pudo cargar el catálogo.");
+
 });
 
-/* DETALLE */
-window.viewProduct=id=>{
-  const p=products.find(x=>x.id===id);
-  if(!p||(!admin&&p.active===false))return;
-  currentDetail=p;
+/* FICHA INDIVIDUAL */
+
+window.viewProduct = id=>{
+
+  const p = products.find(x=>x.id===id);
+
+  if (!p || (!admin && p.active===false)) return;
+
+  currentDetail = p;
+
   $("mainStore").classList.add("hidden-store");
   $("detailPage").classList.add("visible");
-  $("detailName").textContent=p.name||"";
-  $("detailCategory").textContent=p.category||"";
-  $("detailPrice").textContent=p.price||"Consultar";
-  $("detailDescription").textContent=p.description||"";
-  const pics=getImages(p);
-  $("detailImage").src=pics[0]||"";
-  $("detailImage").style.display=pics.length?"block":"none";
-  $("detailThumbnails").innerHTML=pics.map(src=>`
-    <img class="thumb" src="${escapeHtml(src)}"
-         data-photo="${escapeHtml(src)}" alt="Foto del producto">
+
+  $("detailName").textContent = p.name||"";
+  $("detailCategory").textContent = p.category||"";
+  $("detailPrice").textContent = p.price||"Consultar";
+  $("detailDescription").textContent = p.description||"";
+
+  const pics = getImages(p);
+
+  $("detailImage").src = pics[0]||"";
+  $("detailImage").style.display =
+    pics.length ? "block" : "none";
+
+  $("detailThumbnails").innerHTML = pics.map(src=>`
+    <img class="thumb"
+      src="${escapeHtml(src)}"
+      data-photo="${escapeHtml(src)}"
+      alt="Foto del producto">
   `).join("");
-  $("detailWhatsapp").href=
-    "https://wa.me/5492617040339?text="+
-    encodeURIComponent("Hola Julieta! Quiero consultar por "+p.name);
+
+  $("detailWhatsapp").href =
+    "https://wa.me/5492617040339?text=" +
+    encodeURIComponent(
+      "Hola Julieta! Quiero consultar por " + p.name
+    );
+
   window.scrollTo(0,0);
 };
 
-window.backToCatalog=()=>{
+window.backToCatalog = ()=>{
+
   $("detailPage").classList.remove("visible");
   $("mainStore").classList.remove("hidden-store");
-  currentDetail=null;
+
+  currentDetail = null;
 };
 
-window.zoomImage=()=>{
-  const src=$("detailImage").getAttribute("src");
-  if(!src)return;
-  $("zoomedImage").src=src;
+window.zoomImage = ()=>{
+
+  const src = $("detailImage").getAttribute("src");
+  if (!src) return;
+
+  $("zoomedImage").src = src;
   $("imageZoom").classList.add("open");
 };
-window.closeZoom=()=>$("imageZoom").classList.remove("open");
 
-/* ADMINISTRACIÓN */
-window.openLogin=()=>$("loginModal").classList.add("open");
-window.closeLogin=()=>$("loginModal").classList.remove("open");
+window.closeZoom = ()=>
+  $("imageZoom").classList.remove("open");
+
+/* LOGIN */
+
+window.openLogin = ()=>
+  $("loginModal").classList.add("open");
+
+window.closeLogin = ()=>
+  $("loginModal").classList.remove("open");
 
 $("loginForm").addEventListener("submit",async e=>{
+
   e.preventDefault();
-  try{
+
+  try {
+
     await signInWithEmailAndPassword(
-      auth,$("adminEmail").value,$("adminPassword").value
+      auth,
+      $("adminEmail").value,
+      $("adminPassword").value
     );
-    $("adminPassword").value="";
+
+    $("adminPassword").value = "";
+
     closeLogin();
+
     toast("Sesión iniciada correctamente");
-  }catch(error){
+
+  } catch(error) {
+
     console.error(error);
     toast("Revisá tu correo y contraseña");
+
   }
 });
 
-window.logout=async()=>{
-  try{
+window.logout = async()=>{
+
+  try {
     await signOut(auth);
     toast("Sesión cerrada");
-  }catch(error){
+  } catch(error) {
     console.error(error);
     toast("Error al cerrar sesión");
   }
 };
 
-window.openProduct=(place="catalogo")=>{
-  if(!admin)return openLogin();
-  $("productForm").reset();
-  $("prodId").value="";
-  $("prodPlacement").value=place;
-  $("prodActive").checked=true;
-  $("modalTitle").textContent="Nueva Publicación";
-  $("productModal").classList.add("open");
-};
-window.closeProduct=()=>$("productModal").classList.remove("open");
+/* NUEVO PRODUCTO */
 
-window.editProduct=id=>{
-  if(!admin)return;
-  const p=products.find(x=>x.id===id);
-  if(!p)return;
-  $("prodId").value=id;
-  $("prodPlacement").value=placement(p);
-  $("prodName").value=p.name||"";
-  $("prodCategory").value=p.category||"Electrónica";
-  $("prodPrice").value=p.price||"";
-  $("prodDesc").value=p.description||"";
-  $("prodImage").value=p.image||"";
-  $("prodImages").value=Array.isArray(p.images)?
-    p.images.join("\n"):(p.images||"");
-  $("prodActive").checked=p.active!==false;
-  $("modalTitle").textContent="Editar Publicación";
+window.openProduct = (place="catalogo")=>{
+
+  if (!admin) return openLogin();
+
+  $("productForm").reset();
+  $("prodId").value = "";
+  $("prodPlacement").value = place;
+  $("prodActive").checked = true;
+
+  $("modalTitle").textContent = "Nueva Publicación";
+
   $("productModal").classList.add("open");
 };
+
+window.closeProduct = ()=>
+  $("productModal").classList.remove("open");
+
+/* EDITAR PRODUCTO */
+
+window.editProduct = id=>{
+
+  if (!admin) return;
+
+  const p = products.find(x=>x.id===id);
+  if (!p) return;
+
+  $("prodId").value = id;
+  $("prodPlacement").value = placement(p);
+  $("prodName").value = p.name||"";
+  $("prodCategory").value = p.category||"Electrónica";
+  $("prodPrice").value = p.price||"";
+  $("prodDesc").value = p.description||"";
+  $("prodImage").value = p.image||"";
+
+  $("prodImages").value = Array.isArray(p.images)
+    ? p.images.join("\n")
+    : (p.images||"");
+
+  $("prodActive").checked = p.active!==false;
+
+  $("modalTitle").textContent = "Editar Publicación";
+
+  $("productModal").classList.add("open");
+};
+
+/* GUARDAR PRODUCTO */
 
 $("productForm").addEventListener("submit",async e=>{
-  e.preventDefault();
-  if(!admin)return;
-  const image=$("prodImage").value.trim();
-  const extras=$("prodImages").value
-    .split("\n").map(s=>s.trim()).filter(Boolean);
 
-  if([image,...extras].filter(Boolean).some(s=>!safeUrl(s))){
+  e.preventDefault();
+
+  if (!admin) return;
+
+  const image = $("prodImage").value.trim();
+
+  const extras = $("prodImages").value
+    .split("\n")
+    .map(s=>s.trim())
+    .filter(Boolean);
+
+  if ([image,...extras].filter(Boolean).some(s=>!safeUrl(s))) {
     toast("Usá img/foto.jpg o una URL pública https://");
     return;
   }
 
-  const place=$("prodPlacement").value;
-  const data={
+  const place = $("prodPlacement").value;
+
+  const data = {
+
     name:$("prodName").value.trim(),
     category:$("prodCategory").value,
     price:$("prodPrice").value.trim(),
     description:$("prodDesc").value.trim(),
+
     image,
     images:extras,
+
     placement:place,
     featured:place==="banner",
     active:$("prodActive").checked
   };
 
-  $("saveButton").disabled=true;
-  try{
-    const id=$("prodId").value;
-    if(id){
+  $("saveButton").disabled = true;
+
+  try {
+
+    const id = $("prodId").value;
+
+    if (id) {
       await updateDoc(doc(productsCol,id),data);
-    }else{
+    } else {
       await addDoc(productsCol,{
-        ...data,createdAt:serverTimestamp()
+        ...data,
+        createdAt:serverTimestamp()
       });
     }
+
     closeProduct();
+
     toast("Publicación guardada correctamente");
-  }catch(error){
+
+  } catch(error) {
+
     console.error(error);
     toast("No se pudo guardar. Revisá Firebase.");
-  }finally{
-    $("saveButton").disabled=false;
+
+  } finally {
+
+    $("saveButton").disabled = false;
+
   }
 });
 
-window.deleteProduct=async id=>{
-  if(!admin||!confirm("¿Eliminar esta publicación?"))return;
-  try{
+/* ELIMINAR PRODUCTO */
+
+window.deleteProduct = async id=>{
+
+  if (!admin || !confirm("¿Eliminar esta publicación?")) {
+    return;
+  }
+
+  try {
+
     await deleteDoc(doc(productsCol,id));
+
     toast("Publicación eliminada");
-  }catch(error){
+
+  } catch(error) {
+
     console.error(error);
     toast("No se pudo eliminar");
+
   }
 };
 
+/* BOTONES */
+
 document.addEventListener("click",e=>{
-  const view=e.target.closest("[data-view]");
-  const edit=e.target.closest("[data-edit]");
-  const del=e.target.closest("[data-delete]");
-  const photo=e.target.closest("[data-photo]");
-  if(view)viewProduct(view.dataset.view);
-  if(edit)editProduct(edit.dataset.edit);
-  if(del)deleteProduct(del.dataset.delete);
-  if(photo)$("detailImage").src=photo.dataset.photo;
+
+  const view = e.target.closest("[data-view]");
+  const edit = e.target.closest("[data-edit]");
+  const del = e.target.closest("[data-delete]");
+  const photo = e.target.closest("[data-photo]");
+
+  if (view) viewProduct(view.dataset.view);
+  if (edit) editProduct(edit.dataset.edit);
+  if (del) deleteProduct(del.dataset.delete);
+
+  if (photo) {
+    $("detailImage").src = photo.dataset.photo;
+  }
 });
 
+/* CERRAR VENTANAS */
+
 document.addEventListener("keydown",e=>{
-  if(e.key==="Escape"){
+
+  if (e.key==="Escape") {
     closeZoom();
     closeProduct();
     closeLogin();
   }
+
 });
 
+/* INICIAR */
+
 renderAll();
+
 </script>
 </body>
 </html>
